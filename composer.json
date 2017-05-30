@@ -1,0 +1,48 @@
+{
+    "name": "phplist/base-distribution",
+    "description": "A distribution of phpList, the world's most popular open source newsletter manager",
+    "type": "project",
+    "keywords": [
+        "phplist",
+        "email",
+        "newsletter",
+        "manager"
+    ],
+    "homepage": "https://www.phplist.com/",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Oliver Klee",
+            "email": "oliver@phplist.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/phpList/base-distribution/issues",
+        "forum": "https://discuss.phplist.org/",
+        "source": "https://github.com/phpList/base-distribution"
+    },
+    "require": {
+        "php": "~7.0.0 || ~7.1.0",
+
+        "phplist/phplist4-core": "^4.0.0-dev",
+        "phplist/web-frontend": "^4.0.0-dev",
+        "phplist/rest-api": "^4.0.0-dev",
+
+        "roave/security-advisories": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.0.0-dev"
+        }
+    }
+}
