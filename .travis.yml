@@ -1,0 +1,18 @@
+language: php
+
+matrix:
+  include:
+  - php: 7.0
+  - php: 7.1
+
+sudo: false
+cache:
+  directories:
+  - vendor
+  - $HOME/.composer/cache
+
+before_install:
+  - phpenv config-rm xdebug.ini
+
+install:
+  - composer install
