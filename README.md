@@ -6,6 +6,14 @@
 [![Latest Unstable Version](https://poser.pugx.org/phplist/base-distribution/v/unstable.svg)](https://packagist.org/packages/phpList/base-distribution)
 [![License](https://poser.pugx.org/phplist/base-distribution/license.svg)](https://packagist.org/packages/phpList/base-distribution)
 
+## About phpList
+
+phpList is an open source newsletter manager. This project is a rewrite of the
+[original phpList](https://github.com/phpList/phplist3).
+
+
+## About this package
+
 This module is the basis for a phpList 4 installation. It will pull in the
 `phplist/phplist4-core` module (the phpList 4 core), by default also the
 `phplist/rest-api` module (the new REST API package) and (in the future) the
@@ -18,3 +26,14 @@ dependencies via composer update is fine).
 
 This (i.e., the downloaded package) is also the place where configuration files
 will be stored (or symlinked to).
+
+
+## Installation
+
+1. Download and install [composer](https://getcomposer.org/download/).
+2. Run `composer create-project phplist/base-distribution your-project`
+   (use any name you like fot the `your-project` directory).
+3. Switch to the `your-project` directory.
+4. If you would like to not have the web front end or the REST API, edit the
+   `composer.json`, remove the corresponding `phplist/phplist/web-frontend` or
+   `phplist/rest-api` requirement, and run `composer update`.
