@@ -37,3 +37,15 @@ will be stored (or symlinked to).
 4. If you would like to not have the web front end or the REST API, edit the
    `composer.json`, remove the corresponding `phplist/phplist/web-frontend` or
    `phplist/rest-api` requirement, and run `composer update`.
+
+
+## Contributing to this package
+
+Please read the [contribution guide](.github/CONTRIBUTING.md) on how to
+contribute and how to run the unit tests and style checks locally.
+
+### Code of Conduct
+
+This project adheres to a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+By participating in this project and its community, you are expected to uphold
+this code.
