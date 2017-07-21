@@ -32,7 +32,7 @@ will be stored (or symlinked to).
 
 1. Download and install [composer](https://getcomposer.org/download/).
 2. Run `composer create-project phplist/base-distribution your-project`
-   (use any name you like fot the `your-project` directory).
+   (use any name you like for the `your-project` directory).
 3. Switch to the `your-project` directory.
 4. If you would like to not have the web front end or the REST API, edit the
    `composer.json`, remove the corresponding `phplist/phplist/web-frontend` or
