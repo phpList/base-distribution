@@ -15,10 +15,9 @@ phpList is an open source newsletter manager. This project is a rewrite of the
 ## About this package
 
 This module is the basis for a phpList 4 installation. It will pull in the
-`phplist/phplist4-core` module (the phpList 4 core), by default also the
-`phplist/rest-api` module (the new REST API package) and (in the future) the
-`phplist/web-frontend` module (all via Composer). Both dependencies are
-optional.
+`phplist/phplist4-core` module (the phpList 4 core) and by default also the
+`phplist/rest-api` module (the new REST API package). The rest-api dependency
+is optional.
 
 This package is intended to be cloned and then modified. It is not intended to
 be updated via Composer after the initial install (although updating the
@@ -34,9 +33,9 @@ will be stored (or symlinked to).
 2. Run `composer create-project phplist/base-distribution your-project`
    (use any name you like for the `your-project` directory).
 3. Switch to the `your-project` directory.
-4. If you would like to not have the web front end or the REST API, edit the
-   `composer.json`, remove the corresponding `phplist/phplist/web-frontend` or
-   `phplist/rest-api` requirement, and run `composer update`.
+4. If you would like to not have the REST API, edit the `composer.json`,
+   remove the corresponding `phplist/rest-api` requirement, and run
+   `composer update`.
 
 
 ## Contributing to this package
