@@ -30,7 +30,7 @@ will be stored (or symlinked to).
 ## Installation
 
 1. Download and install [composer](https://getcomposer.org/download/).
-2. Run `composer create-project phplist/base-distribution your-project`
+2. Run `composer create-project -s dev phplist/base-distribution your-project`
    (use any name you like for the `your-project` directory).
 3. Switch to the `your-project` directory.
 4. If you would like to not have the REST API, edit the `composer.json`,
