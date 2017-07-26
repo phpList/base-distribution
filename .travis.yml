@@ -20,4 +20,20 @@ install:
 script:
   - >
     echo;
-    echo "Nothing to do yet.";
+    echo "Linting all PHP files";
+    find Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l;
+
+  - >
+    echo;
+    echo "Running the integration tests";
+    vendor/bin/phpunit -c Configuration/PHPUnit/phpunit.xml Tests/Integration/;
+
+  - >
+    echo;
+    echo "Running the static analysis";
+    vendor/bin/phpstan analyse -l 5 Tests/;
+
+  - >
+    echo;
+    echo "Running PHP_CodeSniffer";
+    vendor/bin/phpcs --standard=vendor/phplist/phplist4-core/Configuration/PhpCodeSniffer/ Tests/;
