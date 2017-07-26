@@ -30,12 +30,20 @@ will be stored (or symlinked to).
 ## Installation
 
 1. Download and install [composer](https://getcomposer.org/download/).
-2. Run `composer create-project -s dev phplist/base-distribution your-project`
+2. Run `composer create-project -s dev --no-dev phplist/base-distribution your-project`
    (use any name you like for the `your-project` directory).
 3. Switch to the `your-project` directory.
 4. If you would like to not have the REST API, edit the `composer.json`,
    remove the corresponding `phplist/rest-api` requirement, and run
    `composer update`.
+5. In the Apache virtual host configuration, set the directory `web/` as the
+  document root.
+6. Set the phpList database credentials as environment variables in the Apache
+   virtual host configuration
+   - PHPLIST_DATABASE_NAME
+   - PHPLIST_DATABASE_USER
+   - PHPLIST_DATABASE_PASSWORD
+7. Reload or restart Apache to activate the configuration changes.
 
 
 ## Contributing to this package
