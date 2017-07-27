@@ -49,4 +49,40 @@ class ScriptsTest extends TestCase
     {
         self::assertFileExists($this->getAbsoluteWebDirectoryPath() . $fileName);
     }
+
+    /**
+     * @test
+     */
+    public function binariesDirectoryHasBeenCreated()
+    {
+        self::assertDirectoryExists($this->getAbsoluteBinariesDirectoryPath());
+    }
+
+    /**
+     * @return string
+     */
+    private function getAbsoluteBinariesDirectoryPath(): string
+    {
+        return dirname(__DIR__, 3) . '/bin/';
+    }
+
+    /**
+     * @return string[][]
+     */
+    public function binariesDataProvider(): array
+    {
+        return [
+            'Symfony console' => ['console'],
+        ];
+    }
+
+    /**
+     * @test
+     * @param string $fileName
+     * @dataProvider binariesDataProvider
+     */
+    public function binariesExist(string $fileName)
+    {
+        self::assertFileExists($this->getAbsoluteBinariesDirectoryPath() . $fileName);
+    }
 }

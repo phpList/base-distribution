@@ -3,6 +3,7 @@
 /.idea/
 /.project
 /.webprj
+/bin/
 /composer.lock
 /nbproject
 /vendor/

@@ -48,16 +48,22 @@
         }
     },
     "scripts": {
+        "binaries": [
+            "cp -rf --preserve vendor/phplist/phplist4-core/bin/ ."
+        ],
         "document-root": [
             "cp -rf vendor/phplist/phplist4-core/web/ ."
         ],
         "post-install-cmd": [
+            "@binaries",
             "@document-root"
         ],
         "post-update-cmd": [
+            "@binaries",
             "@document-root"
         ],
         "post-root-package-install": [
+            "@binaries",
             "@document-root"
         ]
     },
