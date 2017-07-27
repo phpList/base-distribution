@@ -103,14 +103,18 @@ We will only merge pull requests that follow the project's coding style.
 
 Please check your code with the provided PHP_CodeSniffer standard:
 
-    vendor/bin/phpcs --standard=vendor/phplist/phplist4-core/Configuration/PhpCodeSniffer/ Tests/
+    vendor/bin/phpcs --standard=vendor/phplist/phplist4-core/Configuration/PhpCodeSniffer/ Classes/ Tests/
+
+Please also check the code structure using PHPMD:
+
+    vendor/bin/phpmd Classes/ text vendor/phplist/phplist4-core/Configuration/PHPMD/rules.xml
 
 And also please run the static code analysis:
 
-    vendor/bin/phpstan analyse -l 5 Tests/
+    vendor/bin/phpstan analyse -l 5 Classes/ Tests/
 
 You can also run all code style checks using one long line from a bash shell:
-    find Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l && vendor/bin/phpstan analyse -l 5 Tests/ && vendor/bin/phpcs --standard=vendor/phplist/phplist4-core/Configuration/PhpCodeSniffer/ Tests/
+    find Classes/ Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l && vendor/bin/phpstan analyse -l 5 Classes/ Tests/ && vendor/bin/phpmd Classes/ text vendor/phplist/phplist4-core/Configuration/PHPMD/rules.xml && vendor/bin/phpcs --standard=vendor/phplist/phplist4-core/Configuration/PhpCodeSniffer/ Classes/ Tests/
 
 This will execute all tests except for the unit tests and the integration
 tests.
