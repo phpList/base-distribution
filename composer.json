@@ -33,13 +33,15 @@
     "require-dev": {
         "phpunit/phpunit": "^6.2.2",
         "squizlabs/php_codesniffer": "^3.0.1",
-        "phpstan/phpstan": "^0.7.0"
+        "phpstan/phpstan": "^0.7.0",
+        "phpmd/phpmd": "^2.6.0"
     },
     "suggest": {
         "phplist/web-frontend": "4.0.x-dev"
     },
     "autoload": {
         "psr-4": {
+            "PhpList\\BaseDistribution\\": "Classes/"
         }
     },
     "autoload-dev": {
@@ -49,10 +51,10 @@
     },
     "scripts": {
         "binaries": [
-            "cp -rf --preserve vendor/phplist/phplist4-core/bin/ ."
+            "PhpList\\BaseDistribution\\Composer\\ScriptHandler::createBinaries"
         ],
         "document-root": [
-            "cp -rf vendor/phplist/phplist4-core/web/ ."
+            "PhpList\\BaseDistribution\\Composer\\ScriptHandler::createPublicWebDirectory"
         ],
         "post-install-cmd": [
             "@binaries",
