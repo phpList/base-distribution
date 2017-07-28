@@ -31,21 +31,22 @@ class ScriptsTest extends TestCase
     /**
      * @return string[][]
      */
-    public function entryPointDataProvider(): array
+    public function webDirectoryFilesDataProvider(): array
     {
         return [
-            'production' => ['app.php'],
-            'development' => ['app_dev.php'],
-            'testing' => ['app_test.php'],
+            'production entry point' => ['app.php'],
+            'development entry point' => ['app_dev.php'],
+            'testing entry point' => ['app_test.php'],
+            '.htaccess' => ['.htaccess'],
         ];
     }
 
     /**
      * @test
      * @param string $fileName
-     * @dataProvider entryPointDataProvider
+     * @dataProvider webDirectoryFilesDataProvider
      */
-    public function entryPointsExist(string $fileName)
+    public function webDirectoryFilesExist(string $fileName)
     {
         self::assertFileExists($this->getAbsoluteWebDirectoryPath() . $fileName);
     }
