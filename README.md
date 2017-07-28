@@ -37,14 +37,68 @@ will be stored (or symlinked to).
    remove the corresponding `phplist/rest-api` requirement, and run
    `composer update`.
 5. In the Apache virtual host configuration, set the directory `web/` as the
-  document root.
+   document root.
 6. Set the phpList database credentials as environment variables in the Apache
-   virtual host configuration
-   - PHPLIST_DATABASE_NAME
-   - PHPLIST_DATABASE_USER
-   - PHPLIST_DATABASE_PASSWORD
-7. Reload or restart Apache to activate the configuration changes.
+   virtual host configuration. Your configuration then could look like this:
 
+```
+<VirtualHost *:80>
+    ServerName domain.tld
+    ServerAlias www.domain.tld
+
+    DocumentRoot /var/www/project/web
+    <Directory /var/www/project/web>
+        AllowOverride All
+        Order Allow,Deny
+        Allow from All
+    </Directory>
+
+    # uncomment the following lines if you install assets as symlinks
+    # or run into problems when compiling LESS/Sass/CoffeeScript assets
+    # <Directory /var/www/project>
+    #     Options FollowSymlinks
+    # </Directory>
+
+    SetEnv PHPLIST_DATABASE_NAME phplist
+    SetEnv PHPLIST_DATABASE_USER phplist
+    SetEnv PHPLIST_DATABASE_PASSWORD correctHorseBatteryStaple
+
+    ErrorLog /var/log/apache2/project_error.log
+    CustomLog /var/log/apache2/project_access.log combined
+</VirtualHost>
+```
+
+Then reload or restart Apache to activate the configuration changes.
+
+Use the following optimized configuration to disable .htaccess support and increase web server performance:
+
+```
+<VirtualHost *:80>
+    ServerName domain.tld
+    ServerAlias www.domain.tld
+
+    DocumentRoot /var/www/project/web
+    <Directory /var/www/project/web>
+        AllowOverride None
+        Order Allow,Deny
+        Allow from All
+
+        <IfModule mod_rewrite.c>
+            Options -MultiViews
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^(.*)$ app.php [QSA,L]
+        </IfModule>
+    </Directory>
+
+    SetEnv PHPLIST_DATABASE_NAME phplist
+    SetEnv PHPLIST_DATABASE_USER phplist
+    SetEnv PHPLIST_DATABASE_PASSWORD correctHorseBatteryStaple
+
+    ErrorLog /var/log/apache2/project_error.log
+    CustomLog /var/log/apache2/project_access.log combined
+</VirtualHost>
+```
 
 ## Contributing to this package
 
