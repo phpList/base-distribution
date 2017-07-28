@@ -51,10 +51,10 @@
     },
     "scripts": {
         "binaries": [
-            "PhpList\\BaseDistribution\\Composer\\ScriptHandler::createBinaries"
+            "PhpList\\PhpList4\\Composer\\ScriptHandler::createBinaries"
         ],
         "document-root": [
-            "PhpList\\BaseDistribution\\Composer\\ScriptHandler::createPublicWebDirectory"
+            "PhpList\\PhpList4\\Composer\\ScriptHandler::createPublicWebDirectory"
         ],
         "post-install-cmd": [
             "@binaries",
