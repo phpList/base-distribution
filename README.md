@@ -36,9 +36,18 @@ will be stored (or symlinked to).
 4. If you would like to not have the REST API, edit the `composer.json`,
    remove the corresponding `phplist/rest-api` requirement, and run
    `composer update`.
-5. In the Apache virtual host configuration, set the directory `web/` as the
+
+
+## Configuring and running phpList on a web server
+
+The phpList application is configured that the built-in PHP web server can run
+in development and testing mode, while Apache can run in production mode.
+
+### Production on Apache
+
+1. In the Apache virtual host configuration, set the directory `web/` as the
    document root.
-6. Set the phpList database credentials as environment variables in the Apache
+2. Set the phpList database credentials as environment variables in the Apache
    virtual host configuration. Your configuration then could look like this:
 
 ```
@@ -99,6 +108,26 @@ Use the following optimized configuration to disable .htaccess support and incre
     CustomLog /var/log/apache2/project_access.log combined
 </VirtualHost>
 ```
+
+### Development
+
+For running the application in development mode using the build-in PHP server,
+use this command:
+
+    bin/console server:run
+
+The server will then listen on `http://127.0.0.1:8000` (or, if port 8000 is
+already in use, on the next free port after 8000).
+
+You can stop the server with CTRL + C.
+
+### Testing
+
+To run the server in testing mode (which normally will only be needed for the
+automated tests, provide the `--dev` option:
+
+    bin/console server:run --env=test
+
 
 ## Contributing to this package
 
