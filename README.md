@@ -40,8 +40,8 @@ will be stored (or symlinked to).
 
 ## Configuring and running phpList on a web server
 
-The phpList application is configured so that the built-in PHP web server can run
-in development and testing mode, while Apache can run in production mode.
+The phpList application is configured so that the built-in PHP web server can
+run in development and testing mode, while Apache can run in production mode.
 
 ### Production on Apache
 
@@ -124,7 +124,7 @@ You can stop the server with CTRL + C.
 ### Testing
 
 To run the server in testing mode (which normally will only be needed for the
-automated tests, provide the `--dev` option:
+automated tests, provide the `--env` option:
 
     bin/console server:run --env=test
 
