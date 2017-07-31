@@ -40,7 +40,7 @@ will be stored (or symlinked to).
 
 ## Configuring and running phpList on a web server
 
-The phpList application is configured that the built-in PHP web server can run
+The phpList application is configured so that the built-in PHP web server can run
 in development and testing mode, while Apache can run in production mode.
 
 ### Production on Apache
@@ -111,7 +111,7 @@ Use the following optimized configuration to disable .htaccess support and incre
 
 ### Development
 
-For running the application in development mode using the build-in PHP server,
+For running the application in development mode using the built-in PHP server,
 use this command:
 
     bin/console server:run
