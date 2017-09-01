@@ -129,6 +129,13 @@ automated tests, provide the `--env` option:
     bin/console server:run --env=test
 
 
+## Useful Composer scripts
+
+You can get a list of all installed phpList modules with this command:
+
+    composer run-script list-modules
+
+
 ## Contributing to this package
 
 Please read the [contribution guide](.github/CONTRIBUTING.md) on how to
