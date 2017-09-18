@@ -23,7 +23,7 @@
         "source": "https://github.com/phpList/base-distribution"
     },
     "require": {
-        "php": "~7.0.0 || ~7.1.0",
+        "php": "~7.0.0 || ~7.1.0 || ~7.2.0",
 
         "phplist/phplist4-core": "4.0.x-dev",
         "phplist/rest-api": "4.0.x-dev",
