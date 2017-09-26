@@ -109,7 +109,7 @@ class ScriptsTest extends TestCase
     public function bundleClassNameDataProvider(): array
     {
         return [
-            'framework bundle' => ['Symfony\\\\Bundle\\\\FrameworkBundle\\\\FrameworkBundle'],
+            'framework bundle' => ['Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle'],
         ];
     }
 
