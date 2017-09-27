@@ -62,20 +62,26 @@
         "bundle-configuration": [
             "PhpList\\PhpList4\\Composer\\ScriptHandler::createBundleConfiguration"
         ],
+        "routes-configuration": [
+            "PhpList\\PhpList4\\Composer\\ScriptHandler::createRoutesConfiguration"
+        ],
         "post-install-cmd": [
             "@binaries",
             "@document-root",
-            "@bundle-configuration"
+            "@bundle-configuration",
+            "@routes-configuration"
         ],
         "post-update-cmd": [
             "@binaries",
             "@document-root",
-            "@bundle-configuration"
+            "@bundle-configuration",
+            "@routes-configuration"
         ],
         "post-create-project-cmd": [
             "@binaries",
             "@document-root",
-            "@bundle-configuration"
+            "@bundle-configuration",
+            "@routes-configuration"
         ]
     },
     "extra": {
@@ -83,7 +89,8 @@
             "dev-master": "4.0.x-dev"
         },
         "phplist/phplist4-core": {
-            "bundles": []
+            "bundles": [],
+            "routes": {}
         }
     }
 }
