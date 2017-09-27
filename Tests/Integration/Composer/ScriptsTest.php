@@ -124,4 +124,20 @@ class ScriptsTest extends TestCase
 
         self::assertContains($bundleClassName, $fileContents);
     }
+
+    /**
+     * @return string
+     */
+    private function getModuleRoutesConfigurationFilePath(): string
+    {
+        return dirname(__DIR__, 3) . '/Configuration/routing_modules.yml';
+    }
+
+    /**
+     * @test
+     */
+    public function moduleRoutesConfigurationFileExists()
+    {
+        self::assertFileExists($this->getModuleRoutesConfigurationFilePath());
+    }
 }
