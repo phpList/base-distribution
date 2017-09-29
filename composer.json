@@ -59,7 +59,9 @@
         ],
         "update-configuration": [
             "PhpList\\PhpList4\\Composer\\ScriptHandler::createBundleConfiguration",
-            "PhpList\\PhpList4\\Composer\\ScriptHandler::createRoutesConfiguration"
+            "PhpList\\PhpList4\\Composer\\ScriptHandler::createRoutesConfiguration",
+            "PhpList\\PhpList4\\Composer\\ScriptHandler::clearAllCaches",
+            "PhpList\\PhpList4\\Composer\\ScriptHandler::warmProductionCache"
         ],
         "post-install-cmd": [
             "@create-directories",
@@ -78,7 +80,7 @@
         "branch-alias": {
             "dev-master": "4.0.x-dev"
         },
-        "symfony-app-dir": "Classes",
+        "symfony-app-dir": "bin",
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
         "symfony-web-dir": "web",
