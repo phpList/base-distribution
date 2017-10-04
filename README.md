@@ -114,7 +114,7 @@ Use the following optimized configuration to disable .htaccess support and incre
 For running the application in development mode using the built-in PHP server,
 use this command:
 
-    bin/console server:run
+    bin/console server:run -d web/
 
 The server will then listen on `http://127.0.0.1:8000` (or, if port 8000 is
 already in use, on the next free port after 8000).
@@ -126,7 +126,7 @@ You can stop the server with CTRL + C.
 To run the server in testing mode (which normally will only be needed for the
 automated tests, provide the `--env` option:
 
-    bin/console server:run --env=test
+    bin/console server:run -d web/ --env=test
 
 
 ## Useful Composer scripts
