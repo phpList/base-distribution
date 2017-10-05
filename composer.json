@@ -84,10 +84,6 @@
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
         "symfony-web-dir": "web",
-        "symfony-tests-dir": "Tests",
-        "phplist/phplist4-core": {
-            "bundles": [],
-            "routes": {}
-        }
+        "symfony-tests-dir": "Tests"
     }
 }
