@@ -140,4 +140,12 @@ class ScriptsTest extends TestCase
     {
         self::assertFileExists($this->getModuleRoutesConfigurationFilePath());
     }
+
+    /**
+     * @test
+     */
+    public function parametersConfigurationFileExists()
+    {
+        self::assertFileExists(dirname(__DIR__, 3) . '/Configuration/parameters.yml');
+    }
 }
