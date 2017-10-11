@@ -48,7 +48,8 @@ run in development and testing mode, while Apache can run in production mode.
 1. In the Apache virtual host configuration, set the directory `web/` as the
    document root.
 2. Set the phpList database credentials as environment variables in the Apache
-   virtual host configuration. Your configuration then could look like this:
+   virtual host configuration. Your Apache 2.4 configuration then could look
+   like this:
 
 ```
 <VirtualHost *:80>
@@ -58,8 +59,7 @@ run in development and testing mode, while Apache can run in production mode.
     DocumentRoot /var/www/project/web
     <Directory /var/www/project/web>
         AllowOverride All
-        Order Allow,Deny
-        Allow from All
+        Require all granted
     </Directory>
 
     # uncomment the following lines if you install assets as symlinks
