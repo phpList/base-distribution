@@ -47,9 +47,9 @@ run in development and testing mode, while Apache can run in production mode.
 
 1. In the Apache virtual host configuration, set the directory `web/` as the
    document root.
-2. Set the phpList database credentials as environment variables in the Apache
-   virtual host configuration. Your Apache 2.4 configuration then could look
-   like this:
+2. Set a random 40-character hex secret and the phpList database credentials
+   in the Apache virtual host configuration. Your Apache 2.4 configuration
+   then could look like this:
 
 ```
 <VirtualHost *:80>
@@ -68,6 +68,7 @@ run in development and testing mode, while Apache can run in production mode.
     #     Options FollowSymlinks
     # </Directory>
 
+    SetEnv PHPLIST_SECRET f75365ecb07c725ba05d5361e415a328880360e5
     SetEnv PHPLIST_DATABASE_NAME phplist
     SetEnv PHPLIST_DATABASE_USER phplist
     SetEnv PHPLIST_DATABASE_PASSWORD correctHorseBatteryStaple
@@ -100,6 +101,7 @@ Use the following optimized configuration to disable .htaccess support and incre
         </IfModule>
     </Directory>
 
+    SetEnv PHPLIST_SECRET f75365ecb07c725ba05d5361e415a328880360e5
     SetEnv PHPLIST_DATABASE_NAME phplist
     SetEnv PHPLIST_DATABASE_USER phplist
     SetEnv PHPLIST_DATABASE_PASSWORD correctHorseBatteryStaple
