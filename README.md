@@ -80,7 +80,15 @@ run in development and testing mode, while Apache can run in production mode.
 
 Then reload or restart Apache to activate the configuration changes.
 
-Use the following optimized configuration to disable .htaccess support and increase web server performance:
+If you cannot set any environment variables in your Apache configuration, you
+can also set the database credentials in `Configuration/parameters.yml`.
+However, this should only be a last measure as this reduces security (as an
+attacker with read access to the files on the web server then could read that
+file, whereas they then still would not be able to access the environment
+variables).
+
+Use the following optimized configuration to disable .htaccess support and
+increase web server performance:
 
 ```
 <VirtualHost *:80>
