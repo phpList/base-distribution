@@ -6,6 +6,15 @@ matrix:
   - php: 7.1
   - php: 7.2
 
+services:
+- mysql
+
+env:
+  global:
+  - PHPLIST_DATABASE_NAME=phplist
+  - PHPLIST_DATABASE_USER=travis
+  - PHPLIST_DATABASE_PASSWORD=''
+
 sudo: false
 cache:
   directories:
@@ -13,7 +22,13 @@ cache:
   - $HOME/.composer/cache
 
 before_install:
-  - phpenv config-rm xdebug.ini
+- phpenv config-rm xdebug.ini
+- >
+  echo;
+  echo "Creating the database and importing the database schema";
+  mysql -e "CREATE DATABASE ${PHPLIST_DATABASE_NAME};";
+  mysql -u root -e "GRANT ALL ON ${PHPLIST_DATABASE_NAME}.* TO '${PHPLIST_DATABASE_USER}'@'%';";
+  mysql ${PHPLIST_DATABASE_NAME} < vendor/phplist/phplist4-core/Database/Schema.sql;
 
 install:
   - composer install
