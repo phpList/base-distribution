@@ -16,10 +16,11 @@ env:
   - PHPLIST_DATABASE_PASSWORD=''
 
 sudo: false
+
 cache:
   directories:
   - vendor
-  - $HOME/.composer/cache
+  - "$HOME/.composer/cache"
 
 before_install:
 - phpenv config-rm xdebug.ini
@@ -31,30 +32,30 @@ before_install:
   mysql ${PHPLIST_DATABASE_NAME} < vendor/phplist/phplist4-core/Database/Schema.sql;
 
 install:
-  - composer install
+- composer install
 
 script:
-  - >
-    echo;
-    echo "Linting all PHP files";
-    find Classes/ Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l;
+- >
+  echo;
+  echo "Linting all PHP files";
+  find Classes/ Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l;
 
-  - >
-    echo;
-    echo "Running the integration tests";
-    vendor/bin/phpunit -c Configuration/PHPUnit/phpunit.xml Tests/Integration/;
+- >
+  echo;
+  echo "Running the integration tests";
+  vendor/bin/phpunit -c Configuration/PHPUnit/phpunit.xml Tests/Integration/;
 
-  - >
-    echo;
-    echo "Running the static analysis";
-    vendor/bin/phpstan analyse -l 5 Classes/ Tests/;
+- >
+  echo;
+  echo "Running the static analysis";
+  vendor/bin/phpstan analyse -l 5 Classes/ Tests/;
 
-  - >
-    echo;
-    echo "Running PHPMD";
-    vendor/bin/phpmd Classes/ text vendor/phplist/phplist4-core/Configuration/PHPMD/rules.xml;
+- >
+  echo;
+  echo "Running PHPMD";
+  vendor/bin/phpmd Classes/ text vendor/phplist/phplist4-core/Configuration/PHPMD/rules.xml;
 
-  - >
-    echo;
-    echo "Running PHP_CodeSniffer";
-    vendor/bin/phpcs --standard=vendor/phplist/phplist4-core/Configuration/PhpCodeSniffer/ Classes/ Tests/;
+- >
+  echo;
+  echo "Running PHP_CodeSniffer";
+  vendor/bin/phpcs --standard=vendor/phplist/phplist4-core/Configuration/PhpCodeSniffer/ Classes/ Tests/;
