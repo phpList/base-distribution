@@ -156,7 +156,7 @@ composer create-project phplist/base-distribution phplist 4.0.x-dev --prefer-dis
 tar -cvzf phplist-base-distribution-4.0.x-dev.tar.gz phplist
 ```
 
-These steps assume that `tar` is installed on your machine, and that you `composer` in your path
+These steps assume that `tar` and `composer` are installed on your machine, and that `composer` is [in your path](https://getcomposer.org/doc/00-intro.md#globally)
 (and that it is named `composer`, not `composer.phar`).
 
 
