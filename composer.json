@@ -49,6 +49,11 @@
             "PhpList\\BaseDistribution\\Tests\\": "Tests/"
         }
     },
+    "config": {
+        "platform": {
+            "php": "7.0.8"
+        }
+    },
     "scripts": {
         "list-modules": [
             "PhpList\\PhpList4\\Composer\\ScriptHandler::listModules"
