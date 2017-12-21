@@ -146,6 +146,20 @@ You can get a list of all installed phpList modules with this command:
     composer run-script list-modules
 
 
+## Creating a .tar.gz package of this distribution
+
+These are the steps to create a package for version 4.0.x-dev with the file
+name `phplist-base-distribution-4.0.x-dev.tar.gz`:
+
+```bash
+composer create-project phplist/base-distribution phplist 4.0.x-dev --prefer-dist --no-dev -s dev
+tar -cvzf phplist-base-distribution-4.0.x-dev.tar.gz phplist
+```
+
+These steps assume that `tar` and `composer` are installed on your machine, and that `composer` is [in your path](https://getcomposer.org/doc/00-intro.md#globally)
+(and that it is named `composer`, not `composer.phar`).
+
+
 ## Contributing to this package
 
 Please read the [contribution guide](.github/CONTRIBUTING.md) on how to
