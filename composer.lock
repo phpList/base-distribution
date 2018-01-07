@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c897375abc9fd404366dc5b6449cb211",
+    "content-hash": "0439d27dd80033bdbef003dbb8d5cd8b",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1466,12 +1466,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/phplist4-core.git",
-                "reference": "cd05728922abe792f28ec6d49f3fca6ee2b59819"
+                "reference": "409adb84214f68db136dc0c055c1cc5fb071b573"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/phplist4-core/zipball/cd05728922abe792f28ec6d49f3fca6ee2b59819",
-                "reference": "cd05728922abe792f28ec6d49f3fca6ee2b59819",
+                "url": "https://api.github.com/repos/phpList/phplist4-core/zipball/409adb84214f68db136dc0c055c1cc5fb071b573",
+                "reference": "409adb84214f68db136dc0c055c1cc5fb071b573",
                 "shasum": ""
             },
             "require": {
@@ -1496,8 +1496,8 @@
                 "phpmd/phpmd": "^2.6.0",
                 "phpstan/phpstan": "^0.7.0",
                 "phpunit/dbunit": "^3.0.0",
-                "phpunit/phpunit": "^6.2.2",
-                "squizlabs/php_codesniffer": "^3.0.0"
+                "phpunit/phpunit": "^6.5.0",
+                "squizlabs/php_codesniffer": "^3.2.0"
             },
             "suggest": {
                 "phplist/rest-api": "4.0.x-dev",
@@ -1559,7 +1559,7 @@
                 "newsletter",
                 "phplist"
             ],
-            "time": "2018-01-05T17:55:41+00:00"
+            "time": "2018-01-07T17:25:19+00:00"
         },
         {
             "name": "phplist/rest-api",
@@ -1567,12 +1567,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "f98d09abe1d9e288adea46d71c2659be6d11fa9d"
+                "reference": "6f5061dd8df147f96d887077aee2e28d0bb954d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/f98d09abe1d9e288adea46d71c2659be6d11fa9d",
-                "reference": "f98d09abe1d9e288adea46d71c2659be6d11fa9d",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/6f5061dd8df147f96d887077aee2e28d0bb954d1",
+                "reference": "6f5061dd8df147f96d887077aee2e28d0bb954d1",
                 "shasum": ""
             },
             "require": {
@@ -1582,11 +1582,13 @@
                 "roave/security-advisories": "dev-master"
             },
             "require-dev": {
+                "nette/caching": "^2.5.0 || ^3.0.0",
+                "nikic/php-parser": "^3.0.0",
                 "phpmd/phpmd": "^2.6.0",
                 "phpstan/phpstan": "^0.7.0",
                 "phpunit/dbunit": "^3.0.0",
                 "phpunit/phpunit": "^6.2.2",
-                "squizlabs/php_codesniffer": "^3.0.1"
+                "squizlabs/php_codesniffer": "^3.0.0"
             },
             "type": "phplist-module",
             "extra": {
@@ -1666,7 +1668,7 @@
                 "phplist",
                 "rest"
             ],
-            "time": "2018-01-05T11:42:31+00:00"
+            "time": "2018-01-07T17:22:07+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1963,12 +1965,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "21b3900483e9bc1536a298bc3eb3d647ab56d8a1"
+                "reference": "fe89fd2178cabef137b9a76fa91d64925474b956"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/21b3900483e9bc1536a298bc3eb3d647ab56d8a1",
-                "reference": "21b3900483e9bc1536a298bc3eb3d647ab56d8a1",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/fe89fd2178cabef137b9a76fa91d64925474b956",
+                "reference": "fe89fd2178cabef137b9a76fa91d64925474b956",
                 "shasum": ""
             },
             "conflict": {
@@ -2051,7 +2053,7 @@
                 "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
                 "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-                "thelia/thelia": ">=2.1,<2.1.2|>=2.1.0-beta1,<2.1.3",
+                "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
                 "twig/twig": "<1.20",
                 "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.22|>=8,<8.7.5",
                 "typo3/flow": ">=1,<1.0.4|>=1.1,<1.1.1|>=2,<2.0.1|>=2.3,<2.3.16|>=3,<3.0.10|>=3.1,<3.1.7|>=3.2,<3.2.7|>=3.3,<3.3.5",
@@ -2100,7 +2102,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-01-03T11:17:07+00:00"
+            "time": "2018-01-07T00:56:33+00:00"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -4425,16 +4427,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "5.0.5",
+            "version": "5.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "283b9f4f670e3a6fd6c4ff95c51a952eb5c75933"
+                "reference": "33fd41a76e746b8fa96d00b49a23dadfa8334cdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/283b9f4f670e3a6fd6c4ff95c51a952eb5c75933",
-                "reference": "283b9f4f670e3a6fd6c4ff95c51a952eb5c75933",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/33fd41a76e746b8fa96d00b49a23dadfa8334cdf",
+                "reference": "33fd41a76e746b8fa96d00b49a23dadfa8334cdf",
                 "shasum": ""
             },
             "require": {
@@ -4480,7 +4482,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2017-12-10T08:01:53+00:00"
+            "time": "2018-01-06T05:45:45+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
