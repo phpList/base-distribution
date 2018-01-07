@@ -4,7 +4,6 @@
 /.project
 /.webprj
 /bin/
-/composer.lock
 /Configuration/bundles.yml
 /Configuration/config_modules.yml
 /Configuration/parameters.yml
