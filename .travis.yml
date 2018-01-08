@@ -52,6 +52,11 @@ before_script:
 script:
 - >
   echo;
+  echo "Validating that composer.lock and composer.json are in sync";
+  composer validate --no-check-all --strict;
+
+- >
+  echo;
   echo "Linting all PHP files";
   find Classes/ Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l;
 
