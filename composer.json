@@ -9,7 +9,7 @@
         "manager"
     ],
     "homepage": "https://www.phplist.com/",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Oliver Klee",
