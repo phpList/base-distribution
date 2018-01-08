@@ -1567,12 +1567,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "6f5061dd8df147f96d887077aee2e28d0bb954d1"
+                "reference": "369ba877eca9530766aa7f7da2de34f08380ab04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/6f5061dd8df147f96d887077aee2e28d0bb954d1",
-                "reference": "6f5061dd8df147f96d887077aee2e28d0bb954d1",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/369ba877eca9530766aa7f7da2de34f08380ab04",
+                "reference": "369ba877eca9530766aa7f7da2de34f08380ab04",
                 "shasum": ""
             },
             "require": {
@@ -1587,8 +1587,8 @@
                 "phpmd/phpmd": "^2.6.0",
                 "phpstan/phpstan": "^0.7.0",
                 "phpunit/dbunit": "^3.0.0",
-                "phpunit/phpunit": "^6.2.2",
-                "squizlabs/php_codesniffer": "^3.0.0"
+                "phpunit/phpunit": "^6.5.0",
+                "squizlabs/php_codesniffer": "^3.2.0"
             },
             "type": "phplist-module",
             "extra": {
@@ -1668,7 +1668,7 @@
                 "phplist",
                 "rest"
             ],
-            "time": "2018-01-07T17:22:07+00:00"
+            "time": "2018-01-07T17:58:35+00:00"
         },
         {
             "name": "phpoption/phpoption",
