@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0439d27dd80033bdbef003dbb8d5cd8b",
+    "content-hash": "6c63f95d481ff0eac751321939310faf",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1462,16 +1462,16 @@
         },
         {
             "name": "phplist/phplist4-core",
-            "version": "dev-master",
+            "version": "v4.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/phplist4-core.git",
-                "reference": "d6c00351521609e7cd202bfbc82676833f0417fb"
+                "reference": "5c4f8e4054cdc1778cac246c57f769babec0f843"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/phplist4-core/zipball/d6c00351521609e7cd202bfbc82676833f0417fb",
-                "reference": "d6c00351521609e7cd202bfbc82676833f0417fb",
+                "url": "https://api.github.com/repos/phpList/phplist4-core/zipball/5c4f8e4054cdc1778cac246c57f769babec0f843",
+                "reference": "5c4f8e4054cdc1778cac246c57f769babec0f843",
                 "shasum": ""
             },
             "require": {
@@ -1501,8 +1501,8 @@
                 "squizlabs/php_codesniffer": "^3.2.0"
             },
             "suggest": {
-                "phplist/rest-api": "4.0.x-dev",
-                "phplist/web-frontend": "4.0.x-dev"
+                "phplist/rest-api": "^4.0.0-alpha1",
+                "phplist/web-frontend": "^4.0.0-alpha1"
             },
             "type": "phplist-module",
             "extra": {
@@ -1560,26 +1560,26 @@
                 "newsletter",
                 "phplist"
             ],
-            "time": "2018-01-29T16:24:10+00:00"
+            "time": "2018-01-31T16:26:23+00:00"
         },
         {
             "name": "phplist/rest-api",
-            "version": "dev-master",
+            "version": "v4.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "3462b995707392471f2045ec96e96d4d453da81c"
+                "reference": "770a47f3343142e2805e097c5735436ada5f16c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/3462b995707392471f2045ec96e96d4d453da81c",
-                "reference": "3462b995707392471f2045ec96e96d4d453da81c",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/770a47f3343142e2805e097c5735436ada5f16c1",
+                "reference": "770a47f3343142e2805e097c5735436ada5f16c1",
                 "shasum": ""
             },
             "require": {
                 "friendsofsymfony/rest-bundle": "^2.2",
                 "php": "~7.0.0 || ~7.1.0 || ~7.2.0",
-                "phplist/phplist4-core": "4.0.x-dev",
+                "phplist/phplist4-core": "^4.0.0-alpha1",
                 "roave/security-advisories": "dev-master"
             },
             "require-dev": {
@@ -1669,7 +1669,7 @@
                 "phplist",
                 "rest"
             ],
-            "time": "2018-01-09T12:51:52+00:00"
+            "time": "2018-01-31T16:37:25+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -5189,11 +5189,11 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "phplist/phplist4-core": 20,
-        "phplist/rest-api": 20,
+        "phplist/phplist4-core": 15,
+        "phplist/rest-api": 15,
         "roave/security-advisories": 20
     },
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "~7.0.0 || ~7.1.0 || ~7.2.0"
