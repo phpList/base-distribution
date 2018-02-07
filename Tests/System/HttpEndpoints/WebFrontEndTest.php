@@ -53,7 +53,7 @@ class WebFrontEndTest extends TestCase
 
         $response = $this->httpClient->get('/', ['base_uri' => $this->getBaseUrl()]);
 
-        self::assertSame(200, $response->getStatusCode());
+        static::assertSame(200, $response->getStatusCode());
     }
 
     /**
@@ -67,6 +67,6 @@ class WebFrontEndTest extends TestCase
 
         $response = $this->httpClient->get('/', ['base_uri' => $this->getBaseUrl()]);
 
-        self::assertNotEmpty($response->getBody()->getContents());
+        static::assertNotEmpty($response->getBody()->getContents());
     }
 }
