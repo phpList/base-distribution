@@ -49,7 +49,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "PhpList\\BaseDistribution\\Tests\\": "Tests/"
+            "PhpList\\BaseDistribution\\Tests\\": "tests/"
         }
     },
     "config": {
@@ -93,6 +93,6 @@
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
         "symfony-web-dir": "web",
-        "symfony-tests-dir": "Tests"
+        "symfony-tests-dir": "tests"
     }
 }

@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - System tests for the test and dev environment (#69)
 
 ### Changed
+- Adopt more of the default Symfony project structure (#73)
 
 ### Deprecated
 
