@@ -44,7 +44,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PhpList\\BaseDistribution\\": "Classes/"
+            "PhpList\\BaseDistribution\\": "src/"
         }
     },
     "autoload-dev": {
