@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d23e407426e6876b57822bb82fc1ed1b",
+    "content-hash": "b03c5c8f4705c6c3aa575c8a6655c733",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1466,12 +1466,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/phplist4-core.git",
-                "reference": "2eea0635b874c4c55cdeb029ef55c9de5358e37d"
+                "reference": "4392e901d95b91664bf34b702480d92bbc21325c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/phplist4-core/zipball/2eea0635b874c4c55cdeb029ef55c9de5358e37d",
-                "reference": "2eea0635b874c4c55cdeb029ef55c9de5358e37d",
+                "url": "https://api.github.com/repos/phpList/phplist4-core/zipball/4392e901d95b91664bf34b702480d92bbc21325c",
+                "reference": "4392e901d95b91664bf34b702480d92bbc21325c",
                 "shasum": ""
             },
             "require": {
@@ -1512,8 +1512,8 @@
                 "symfony-app-dir": "",
                 "symfony-bin-dir": "bin",
                 "symfony-var-dir": "var",
-                "symfony-web-dir": "web",
-                "symfony-tests-dir": "Tests",
+                "symfony-web-dir": "public",
+                "symfony-tests-dir": "tests",
                 "phplist/phplist4-core": {
                     "bundles": [
                         "Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle",
@@ -1533,13 +1533,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "PhpList\\PhpList4\\": "Classes/",
-                    "phpList\\": "core/",
-                    "phpList\\helper\\": "core/helper/"
-                },
-                "files": [
-                    "core/helper/Shortcuts.php"
-                ]
+                    "PhpList\\PhpList4\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1560,7 +1555,7 @@
                 "newsletter",
                 "phplist"
             ],
-            "time": "2018-02-02T13:55:30+00:00"
+            "time": "2018-02-19T11:40:41+00:00"
         },
         {
             "name": "phplist/rest-api",
@@ -1568,12 +1563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "3462b995707392471f2045ec96e96d4d453da81c"
+                "reference": "b3027a87cae04bedf4c7912b6df7ff7add772c8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/3462b995707392471f2045ec96e96d4d453da81c",
-                "reference": "3462b995707392471f2045ec96e96d4d453da81c",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/b3027a87cae04bedf4c7912b6df7ff7add772c8b",
+                "reference": "b3027a87cae04bedf4c7912b6df7ff7add772c8b",
                 "shasum": ""
             },
             "require": {
@@ -1583,6 +1578,7 @@
                 "roave/security-advisories": "dev-master"
             },
             "require-dev": {
+                "guzzlehttp/guzzle": "^6.3.0",
                 "nette/caching": "^2.5.0 || ^3.0.0",
                 "nikic/php-parser": "^3.0.0",
                 "phpmd/phpmd": "^2.6.0",
@@ -1599,8 +1595,8 @@
                 "symfony-app-dir": "bin",
                 "symfony-bin-dir": "bin",
                 "symfony-var-dir": "var",
-                "symfony-web-dir": "web",
-                "symfony-tests-dir": "Tests",
+                "symfony-web-dir": "public",
+                "symfony-tests-dir": "tests",
                 "phplist/phplist4-core": {
                     "bundles": [
                         "FOS\\RestBundle\\FOSRestBundle",
@@ -1645,7 +1641,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "PhpList\\RestBundle\\": "Classes/"
+                    "PhpList\\RestBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1669,7 +1665,7 @@
                 "phplist",
                 "rest"
             ],
-            "time": "2018-01-09T12:51:52+00:00"
+            "time": "2018-02-19T11:39:25+00:00"
         },
         {
             "name": "phpoption/phpoption",

@@ -45,7 +45,7 @@ run in development and testing mode, while Apache can run in production mode.
 
 ### Production on Apache
 
-1. In the Apache virtual host configuration, set the directory `web/` as the
+1. In the Apache virtual host configuration, set the directory `public/` as the
    document root.
 2. Set a random 40-character hex secret and the phpList database credentials
    in the Apache virtual host configuration. Your Apache 2.4 configuration
@@ -56,8 +56,8 @@ run in development and testing mode, while Apache can run in production mode.
     ServerName domain.tld
     ServerAlias www.domain.tld
 
-    DocumentRoot /var/www/project/web
-    <Directory /var/www/project/web>
+    DocumentRoot /var/www/project/public
+    <Directory /var/www/project/public>
         AllowOverride All
         Require all granted
     </Directory>
@@ -95,8 +95,8 @@ increase web server performance:
     ServerName domain.tld
     ServerAlias www.domain.tld
 
-    DocumentRoot /var/www/project/web
-    <Directory /var/www/project/web>
+    DocumentRoot /var/www/project/public
+    <Directory /var/www/project/public>
         AllowOverride None
         Order Allow,Deny
         Allow from All
@@ -125,7 +125,7 @@ For running the application in development mode using the built-in PHP server,
 use this command:
 
 ```bash
-bin/console server:run -d web/
+bin/console server:run -d public/
 ```
 
 The server will then listen on `http://127.0.0.1:8000` (or, if port 8000 is
@@ -139,7 +139,7 @@ To run the server in testing mode (which normally will only be needed for the
 automated tests, provide the `--env` option:
 
 ```bash
-bin/console server:run -d web/ --env=test
+bin/console server:run -d public/ --env=test
 ```
 
 
