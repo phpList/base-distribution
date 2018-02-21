@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b03c5c8f4705c6c3aa575c8a6655c733",
+    "content-hash": "63ded5d61fc07e5a72d017f3d41a2824",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1465,12 +1465,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/phpList/phplist4-core.git",
+                "url": "https://github.com/phpList/core.git",
                 "reference": "4392e901d95b91664bf34b702480d92bbc21325c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/phplist4-core/zipball/4392e901d95b91664bf34b702480d92bbc21325c",
+                "url": "https://api.github.com/repos/phpList/core/zipball/4392e901d95b91664bf34b702480d92bbc21325c",
                 "reference": "4392e901d95b91664bf34b702480d92bbc21325c",
                 "shasum": ""
             },
