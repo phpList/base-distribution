@@ -15,7 +15,7 @@ phpList is an open source newsletter manager. This project is a rewrite of the
 ## About this package
 
 This module is the basis for a phpList 4 installation. It will pull in the
-`phplist/phplist4-core` module (the phpList 4 core) and by default also the
+`phplist/core` module (the phpList 4 core) and by default also the
 `phplist/rest-api` module (the new REST API package). The rest-api dependency
 is optional.
 
