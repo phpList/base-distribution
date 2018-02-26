@@ -92,7 +92,7 @@ When running the integration tests, you will need to specify the database name
 and access credentials on the command line (in the same line):
 
 ```bash
-PHPLIST_DATABASE_NAME=phplist_test PHPLIST_DATABASE_USER=phplist PHPLIST_DATABASE_PASSWORD=batterystaple vendor/bin/phpunit -c Configuration/PHPUnit/phpunit.xml tests/Integration/
+PHPLIST_DATABASE_NAME=phplist_test PHPLIST_DATABASE_USER=phplist PHPLIST_DATABASE_PASSWORD=batterystaple vendor/bin/phpunit tests/Integration/
 ```
 
 
