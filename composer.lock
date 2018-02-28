@@ -1465,12 +1465,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "39e522bc24249b5414197e7c1d0ed8547517a5b8"
+                "reference": "7cdc939ed77523ab0b8576b38aa84a955d68179d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/39e522bc24249b5414197e7c1d0ed8547517a5b8",
-                "reference": "39e522bc24249b5414197e7c1d0ed8547517a5b8",
+                "url": "https://api.github.com/repos/phpList/core/zipball/7cdc939ed77523ab0b8576b38aa84a955d68179d",
+                "reference": "7cdc939ed77523ab0b8576b38aa84a955d68179d",
                 "shasum": ""
             },
             "require": {
@@ -1560,7 +1560,7 @@
                 "newsletter",
                 "phplist"
             ],
-            "time": "2018-02-21T17:58:46+00:00"
+            "time": "2018-02-28T16:38:22+00:00"
         },
         {
             "name": "phplist/rest-api",
@@ -1568,12 +1568,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "76c7811c75afe5387264d0b1dd5fc5523899629c"
+                "reference": "b5068e7ab0379f05b07d582ae307916f793b11ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/76c7811c75afe5387264d0b1dd5fc5523899629c",
-                "reference": "76c7811c75afe5387264d0b1dd5fc5523899629c",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/b5068e7ab0379f05b07d582ae307916f793b11ca",
+                "reference": "b5068e7ab0379f05b07d582ae307916f793b11ca",
                 "shasum": ""
             },
             "require": {
@@ -1671,7 +1671,7 @@
                 "phplist",
                 "rest"
             ],
-            "time": "2018-02-21T18:17:43+00:00"
+            "time": "2018-02-27T18:48:29+00:00"
         },
         {
             "name": "phpoption/phpoption",

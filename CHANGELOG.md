@@ -12,7 +12,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 - Move the PHPUnit configuration file (#78)
 - Use the renamed phplist/core package (#77)
-- Adopt more of the default Symfony project structure (#73, #74, #75)
+- Adopt more of the default Symfony project structure (#73, #74, #75, #79)
 
 ### Deprecated
 

@@ -85,7 +85,7 @@ named `phplist`, and the password is `batterystaple`, the command looks like
 this:
 
 ```bash
-mysql -u phplist_test --password=batterystaple phplist_test < vendor/phplist/core/Database/Schema.sql
+mysql -u phplist_test --password=batterystaple phplist_test < vendor/phplist/core/resources/Database/Schema.sql
 ```
 
 When running the integration tests, you will need to specify the database name
