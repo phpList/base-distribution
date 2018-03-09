@@ -81,7 +81,7 @@ run in development and testing mode, while Apache can run in production mode.
 Then reload or restart Apache to activate the configuration changes.
 
 If you cannot set any environment variables in your Apache configuration, you
-can also set the database credentials in `Configuration/parameters.yml`.
+can also set the database credentials in `config/parameters.yml`.
 However, this should only be used as a last resort as this reduces security (as an
 attacker with read access to the files on the web server then could read that
 file, whereas they then still would not be able to access the environment
