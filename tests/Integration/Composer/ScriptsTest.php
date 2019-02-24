@@ -146,7 +146,7 @@ class ScriptsTest extends TestCase
      */
     public function parametersConfigurationFileExists()
     {
-        static::assertFileExists(dirname(__DIR__, 3) . '/config/parameters.yml');
+        static::assertFileExists(dirname(__DIR__, 3) . '/config/parameters.php');
     }
 
     /**
