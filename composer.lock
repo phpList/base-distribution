@@ -1470,12 +1470,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "a1687b4ee7a318cbb6b84ad93cd2e2bd27978606"
+                "reference": "bf1ed842d1eb5dbf061c8d944cffa3359d5d9b1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/a1687b4ee7a318cbb6b84ad93cd2e2bd27978606",
-                "reference": "a1687b4ee7a318cbb6b84ad93cd2e2bd27978606",
+                "url": "https://api.github.com/repos/phpList/core/zipball/bf1ed842d1eb5dbf061c8d944cffa3359d5d9b1a",
+                "reference": "bf1ed842d1eb5dbf061c8d944cffa3359d5d9b1a",
                 "shasum": ""
             },
             "require": {
@@ -1566,7 +1566,7 @@
                 "newsletter",
                 "phplist"
             ],
-            "time": "2019-02-24T15:32:31+00:00"
+            "time": "2019-03-08T12:10:24+00:00"
         },
         {
             "name": "phplist/rest-api",
