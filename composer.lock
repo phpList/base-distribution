@@ -1574,12 +1574,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "dad3a20f52c370670c2f3af6fa6f115d0fd9d5ba"
+                "reference": "9e4e996c17a57636619ecb00c85b3ce28c471815"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/dad3a20f52c370670c2f3af6fa6f115d0fd9d5ba",
-                "reference": "dad3a20f52c370670c2f3af6fa6f115d0fd9d5ba",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/9e4e996c17a57636619ecb00c85b3ce28c471815",
+                "reference": "9e4e996c17a57636619ecb00c85b3ce28c471815",
                 "shasum": ""
             },
             "require": {
@@ -1642,7 +1642,7 @@
                             },
                             "view": {
                                 "view_response_listener": {
-                                    "enabled": true
+                                    "enabled": false
                                 }
                             },
                             "exception": {
@@ -1684,7 +1684,7 @@
                 "phplist",
                 "rest"
             ],
-            "time": "2019-03-05T09:34:58+00:00"
+            "time": "2019-03-06T10:56:59+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -2510,7 +2510,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
