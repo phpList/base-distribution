@@ -10,5 +10,7 @@
 /config/routing_modules.yml
 /nbproject
 /public/
-/var/
+/var/cache/
+/var/logs/
+/var/sessions/
 /vendor/
