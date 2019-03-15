@@ -3,7 +3,16 @@
  * Using old config file
  */
 
-include_once __DIR__.'/../../config/config.php';
+$standardConfig = __DIR__ . '/../../config/config.php';
+
+if (isset($_SERVER['ConfigFile']) && is_file($_SERVER['ConfigFile'])) {
+    include $_SERVER['ConfigFile'];
+
+} elseif (file_exists($standardConfig)) {
+    include $standardConfig;
+} else {
+    throw new \Exception("Error: Cannot find config file");
+}
 
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$database_host;dbname=$database_name;charset=$charset";
