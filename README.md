@@ -121,6 +121,8 @@ increase web server performance:
 
 ### Development
 
+Set the database access credentials by editing `config/parameters.yml`.
+
 For running the application in development mode using the built-in PHP server,
 use this command:
 
