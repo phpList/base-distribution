@@ -1,6 +1,6 @@
 # phpList 4 base distribution
 
-[![Build Status](https://travis-ci.org/phpList/base-distribution.svg?branch=master)](https://travis-ci.org/phpList/base-distribution)
+[![Build Status](https://travis-ci.com/phpList/base-distribution.svg?branch=master)](https://travis-ci.org/phpList/base-distribution)
 [![Latest Stable Version](https://poser.pugx.org/phplist/base-distribution/v/stable.svg)](https://packagist.org/packages/phpList/base-distribution)
 [![Total Downloads](https://poser.pugx.org/phplist/base-distribution/downloads.svg)](https://packagist.org/packages/phpList/base-distribution)
 [![Latest Unstable Version](https://poser.pugx.org/phplist/base-distribution/v/unstable.svg)](https://packagist.org/packages/phpList/base-distribution)
