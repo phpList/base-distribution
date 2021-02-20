@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "193a64e117f4a7161b0fc182662c12e8",
+    "content-hash": "aba269dca7d71fdbe1d83e0fcbb56a33",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1588,12 +1588,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "2a7b72e62f9ea0d6957c89b914ae217b3cbe47c6"
+                "reference": "ae5178874a6187b81743b8ff3d7e4081f5bbccea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/2a7b72e62f9ea0d6957c89b914ae217b3cbe47c6",
-                "reference": "2a7b72e62f9ea0d6957c89b914ae217b3cbe47c6",
+                "url": "https://api.github.com/repos/phpList/core/zipball/ae5178874a6187b81743b8ff3d7e4081f5bbccea",
+                "reference": "ae5178874a6187b81743b8ff3d7e4081f5bbccea",
                 "shasum": ""
             },
             "require": {
@@ -1601,7 +1601,7 @@
                 "doctrine/doctrine-bundle": "^1.8.0",
                 "doctrine/orm": "^2.5.0",
                 "jms/serializer-bundle": "^2.3",
-                "php": ">=7.0",
+                "php": "^7.0|^8.0",
                 "sensio/distribution-bundle": "^5.0.6",
                 "sensio/framework-extra-bundle": "^5.1.0",
                 "symfony/config": "^3.4.37",
@@ -1695,7 +1695,7 @@
                 "source": "https://github.com/phpList/core",
                 "wiki": "https://github.com/phpList/core/wiki"
             },
-            "time": "2021-01-27T15:19:38+00:00"
+            "time": "2021-02-13T22:33:45+00:00"
         },
         {
             "name": "phplist/rest-api",
@@ -1703,17 +1703,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "c31d6f9662ab288dca59cfe44b069f5df9f3f70d"
+                "reference": "70d45ad9853007d39ced57facd172066e1cb9b16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/c31d6f9662ab288dca59cfe44b069f5df9f3f70d",
-                "reference": "c31d6f9662ab288dca59cfe44b069f5df9f3f70d",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/70d45ad9853007d39ced57facd172066e1cb9b16",
+                "reference": "70d45ad9853007d39ced57facd172066e1cb9b16",
                 "shasum": ""
             },
             "require": {
                 "friendsofsymfony/rest-bundle": "^2.3",
-                "php": "~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0",
+                "php": "^7.0|^8.0",
                 "phplist/core": "4.0.x-dev",
                 "sensio/framework-extra-bundle": "5.1.0"
             },
@@ -1726,7 +1726,7 @@
                 "phpunit/dbunit": "^3.0.0",
                 "phpunit/phpunit": "^6.5.6",
                 "phpunit/phpunit-mock-objects": "^5.0.6",
-                "squizlabs/php_codesniffer": "^3.2.0"
+                "squizlabs/php_codesniffer": "^3.5.8"
             },
             "default-branch": true,
             "type": "phplist-module",
@@ -1823,7 +1823,7 @@
                 "issues": "https://github.com/phpList/rest-api/issues",
                 "source": "https://github.com/phpList/rest-api"
             },
-            "time": "2021-01-27T15:50:26+00:00"
+            "time": "2021-02-11T22:55:17+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -5323,12 +5323,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "f7d723a10c7cb36e11430182f5813ecb1b887da0"
+                "reference": "640ff0b5dcacc0958534c8c0255b90697f3eb2a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f7d723a10c7cb36e11430182f5813ecb1b887da0",
-                "reference": "f7d723a10c7cb36e11430182f5813ecb1b887da0",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/640ff0b5dcacc0958534c8c0255b90697f3eb2a8",
+                "reference": "640ff0b5dcacc0958534c8c0255b90697f3eb2a8",
                 "shasum": ""
             },
             "conflict": {
@@ -5346,6 +5346,7 @@
                 "barrelstrength/sprout-forms": "<3.9",
                 "baserproject/basercms": ">=4,<=4.3.6|>=4.4,<4.4.1",
                 "bolt/bolt": "<3.7.1",
+                "bolt/core": "<4.1.13",
                 "brightlocal/phpwhois": "<=4.2.5",
                 "buddypress/buddypress": "<5.1.2",
                 "bugsnag/bugsnag-laravel": ">=2,<2.0.2",
@@ -5445,7 +5446,7 @@
                 "october/backend": ">=1.0.319,<1.0.470",
                 "october/cms": "= 1.0.469|>=1.0.319,<1.0.469",
                 "october/october": ">=1.0.319,<1.0.466",
-                "october/rain": ">=1.0.319,<1.0.468",
+                "october/rain": "<1.0.472|>=1.1,<1.1.2",
                 "onelogin/php-saml": "<2.10.4",
                 "oneup/uploader-bundle": "<1.9.3|>=2,<2.1.5",
                 "openid/php-openid": "<2.3",
@@ -5489,7 +5490,7 @@
                 "sensiolabs/connect": "<4.2.3",
                 "serluck/phpwhois": "<=4.2.6",
                 "shopware/core": "<=6.3.4",
-                "shopware/platform": "<=6.3.4",
+                "shopware/platform": "<=6.3.5",
                 "shopware/shopware": "<5.6.9",
                 "silverstripe/admin": ">=1.0.3,<1.0.4|>=1.1,<1.1.1",
                 "silverstripe/assets": ">=1,<1.4.7|>=1.5,<1.5.2",
@@ -5570,6 +5571,7 @@
                 "ua-parser/uap-php": "<3.8",
                 "usmanhalalit/pixie": "<1.0.3|>=2,<2.0.2",
                 "verot/class.upload.php": "<=1.0.3|>=2,<=2.0.4",
+                "vrana/adminer": "<4.7.9",
                 "wallabag/tcpdf": "<6.2.22",
                 "willdurand/js-translation-bundle": "<2.1.1",
                 "yii2mod/yii2-cms": "<1.9.2",
@@ -5640,7 +5642,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-02T10:05:32+00:00"
+            "time": "2021-02-18T21:02:27+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
