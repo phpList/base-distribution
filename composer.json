@@ -39,7 +39,7 @@
         "squizlabs/php_codesniffer": "^3.5.8",
         "phpstan/phpstan": "^0.7.0 | ^0.12.57",
         "nette/caching": "^2.5.0 | ^3.1.0",
-        "nikic/php-parser": "^3.1.0",
+        "nikic/php-parser": "^3.1.0 | ^4.10.4",
         "phpmd/phpmd": "^2.6.0",
         "roave/security-advisories": "dev-master"
     },
@@ -58,7 +58,7 @@
     },
     "config": {
         "platform": {
-            "php": "7.0.8"
+            "php": "7.2.0"
         }
     },
     "scripts": {
