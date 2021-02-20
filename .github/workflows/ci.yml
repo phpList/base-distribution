@@ -1,4 +1,4 @@
-name: phpList Build
+name: phpList Base Dist Build
 on: [push, pull_request]
 jobs:
   main:
