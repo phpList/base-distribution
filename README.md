@@ -1,6 +1,6 @@
 # phpList 4 base distribution
 
-[![Build Status](https://github.com/phpList/base-distribution/workflows/phpList%20Build/badge.svg)](https://github.com/phpList/web-frontend/actions)
+[![Build Status](https://github.com/phpList/base-distribution/workflows/phpList%20Base%20Dist%20Build/badge.svg)](https://github.com/phpList/base-distribution/actions)
 [![Latest Stable Version](https://poser.pugx.org/phplist/base-distribution/v/stable.svg)](https://packagist.org/packages/phpList/base-distribution)
 [![Total Downloads](https://poser.pugx.org/phplist/base-distribution/downloads.svg)](https://packagist.org/packages/phpList/base-distribution)
 [![Latest Unstable Version](https://poser.pugx.org/phplist/base-distribution/v/unstable.svg)](https://packagist.org/packages/phpList/base-distribution)

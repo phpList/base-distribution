@@ -22,12 +22,12 @@ class RestApiTest extends TestCase
      */
     private $httpClient = null;
 
-    protected function setUp()
+    protected function setUp() : void
     {
         $this->httpClient = new Client(['http_errors' => false]);
     }
 
-    protected function tearDown()
+    protected function tearDown() : void
     {
         $this->stopSymfonyServer();
     }
