@@ -13,3 +13,4 @@
 /var/
 /vendor/
 .DS_Store
+.vagrant
