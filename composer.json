@@ -26,9 +26,7 @@
         "php": "~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0",
 
         "phplist/core": "dev-phplist3",
-        "phplist/rest-api": "dev-phplist3",
-
-        "roave/security-advisories": "dev-master"
+        "phplist/rest-api": "dev-phplist3"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5.6",
