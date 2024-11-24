@@ -23,27 +23,27 @@
         }
     ],
     "repositories": [
-    {
-        "type": "path",
-        "url": "../core",
-        "options": {
-            "symlink": true
+        {
+            "type": "path",
+            "url": "../core",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../rest-api",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../web-frontend",
+            "options": {
+                "symlink": true
+            }
         }
-    },
-    {
-        "type": "path",
-        "url": "../rest-api",
-        "options": {
-            "symlink": true
-        }
-    },
-    {
-        "type": "path",
-        "url": "../web-frontend",
-        "options": {
-            "symlink": true
-        }
-    }
     ],
     "support": {
         "issues": "https://github.com/phpList/base-distribution/issues",
@@ -51,10 +51,10 @@
         "source": "https://github.com/phpList/base-distribution"
     },
     "require": {
-        "php": "^7.2|^8.0",
-        "phplist/core": "@dev",
-        "phplist/rest-api": "@dev",
-        "phplist/web-frontend": "@dev"
+        "php": "^7.2|^8.1",
+        "phplist/core": "dev-ISSUE-337",
+        "phplist/rest-api": "dev-ISSUE-337",
+        "phplist/web-frontend": "dev-ISSUE-337"
     },
     "require-dev": {
         "phpunit/phpunit": "8.5.14 | ^9.5.2",
@@ -106,7 +106,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0.x-dev"
+            "dev-ISSUE-337": "v5.0.x-dev"
         },
         "symfony-app-dir": "bin",
         "symfony-bin-dir": "bin",
