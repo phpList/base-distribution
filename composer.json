@@ -89,7 +89,8 @@
             "PhpList\\Core\\Composer\\ScriptHandler::createBundleConfiguration",
             "PhpList\\Core\\Composer\\ScriptHandler::createRoutesConfiguration",
             "PhpList\\Core\\Composer\\ScriptHandler::createParametersConfiguration",
-            "PhpList\\Core\\Composer\\ScriptHandler::clearAllCaches"
+            "php bin/console cache:clear",
+            "php bin/console cache:warmup"
         ],
         "post-install-cmd": [
             "@create-directories",
