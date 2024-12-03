@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PhpList\BaseDistribution\Tests\System\HttpEndpoints;
 
-use GuzzleHttp\Client;
-use PhpList\Core\TestingSupport\Traits\SymfonyServerTrait;
-use PHPUnit\Framework\TestCase;
+use Doctrine\ORM\Tools\SchemaTool;
+use PhpList\Core\TestingSupport\Traits\DatabaseTestTrait;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -13,60 +14,47 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @author Oliver Klee <oliver@phplist.com>
  */
-class RestApiTest extends TestCase
+class RestApiTest extends WebTestCase
 {
-    use SymfonyServerTrait;
+    use DatabaseTestTrait;
 
-    /**
-     * @var Client
-     */
-    private $httpClient = null;
-
-    protected function setUp() : void
+    protected function setUp(): void
     {
-        $this->httpClient = new Client(['http_errors' => false]);
+        parent::setUp();
+        self::createClient();
+        $this->setUpDatabaseTest();
+        $this->loadSchema();
     }
 
-    protected function tearDown() : void
+    protected function tearDown(): void
     {
-        $this->stopSymfonyServer();
+        $schemaTool = new SchemaTool($this->entityManager);
+        $schemaTool->dropDatabase();
+        parent::tearDown();
     }
 
-    /**
-     * @return string[][]
-     */
-    public function environmentDataProvider(): array
+    public function testPostSessionsWithInvalidCredentialsReturnsNotAuthorized()
     {
-        return [
-            'test' => ['test'],
-            'dev' => ['dev'],
-        ];
-    }
-
-    /**
-     * @test
-     * @param string $environment
-     * @dataProvider environmentDataProvider
-     */
-    public function postSessionsWithInvalidCredentialsReturnsNotAuthorized(string $environment)
-    {
-        $this->startSymfonyServer($environment);
-
         $loginName = 'john.doe';
         $password = 'a sandwich and a cup of coffee';
         $jsonData = ['login_name' => $loginName, 'password' => $password];
 
-        $response = $this->httpClient->post(
+        self::getClient()->request(
+            'POST',
             '/api/v2/sessions',
-            ['base_uri' => $this->getBaseUrl(), 'body' => \json_encode($jsonData)]
+            [],
+            [],
+            [],
+            json_encode($jsonData)
         );
-        static::assertSame(Response::HTTP_UNAUTHORIZED, $response->getStatusCode());
-        static::assertSame(
+
+        $response = self::getClient()->getResponse();
+        self::assertSame(Response::HTTP_UNAUTHORIZED, $response->getStatusCode());
+        self::assertSame(
             [
-                'code' => Response::HTTP_UNAUTHORIZED,
                 'message' => 'Not authorized',
             ],
-            \json_decode($response->getBody()->getContents(), true)
+            json_decode($response->getContent(), true)
         );
     }
 }

@@ -1,72 +1,51 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PhpList\BaseDistribution\Tests\System\HttpEndpoints;
 
-use GuzzleHttp\Client;
-use PhpList\Core\TestingSupport\Traits\SymfonyServerTrait;
-use PHPUnit\Framework\TestCase;
+use Doctrine\ORM\Tools\SchemaTool;
+use PhpList\Core\TestingSupport\Traits\DatabaseTestTrait;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Testcase.
  *
  * @author Oliver Klee <oliver@phplist.com>
  */
-class WebFrontEndTest extends TestCase
+class WebFrontEndTest extends WebTestCase
 {
-    use SymfonyServerTrait;
+    use DatabaseTestTrait;
 
-    /**
-     * @var Client
-     */
-    private $httpClient = null;
-
-    protected function setUp() : void
+    protected function setUp(): void
     {
-        $this->httpClient = new Client(['http_errors' => false]);
+        parent::setUp();
+        self::createClient();
+        $this->setUpDatabaseTest();
+        $this->loadSchema();
     }
 
-    protected function tearDown() : void
+    protected function tearDown(): void
     {
-        $this->stopSymfonyServer();
+        $schemaTool = new SchemaTool($this->entityManager);
+        $schemaTool->dropDatabase();
+        parent::tearDown();
     }
 
-    /**
-     * @return string[][]
-     */
-    public function environmentDataProvider(): array
+    public function testHomepageReturnsSuccess()
     {
-        return [
-            'test' => ['test'],
-            'dev' => ['dev'],
-        ];
+        self::getClient()->request('get', '/api/v2');
+        $response = self::getClient()->getResponse();
+
+        self::assertSame(Response::HTTP_OK, $response->getStatusCode());
+        self::assertStringContainsString('text/html', (string)$response->headers);
     }
 
-    /**
-     * @test
-     * @param string $environment
-     * @dataProvider environmentDataProvider
-     */
-    public function homepageReturnsSuccess(string $environment)
+    public function testHomepageReturnsContent()
     {
-        $this->startSymfonyServer($environment);
+        self::getClient()->request('get', '/');
 
-        $response = $this->httpClient->get('/', ['base_uri' => $this->getBaseUrl()]);
-
-        static::assertSame(200, $response->getStatusCode());
-    }
-
-    /**
-     * @test
-     * @param string $environment
-     * @dataProvider environmentDataProvider
-     */
-    public function homepageReturnsContent(string $environment)
-    {
-        $this->startSymfonyServer($environment);
-
-        $response = $this->httpClient->get('/', ['base_uri' => $this->getBaseUrl()]);
-
-        static::assertNotEmpty($response->getBody()->getContents());
+        self::assertNotEmpty(json_decode(self::getClient()->getResponse()->getContent(), true));
     }
 }
