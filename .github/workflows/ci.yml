@@ -66,7 +66,7 @@ jobs:
       - name: Run integration tests with phpunit
         run: vendor/bin/phpunit tests/Integration/
       - name: Running the system tests
-        run: vendor/bin/phpunit tests/Integration/;
+        run: vendor/bin/phpunit tests/System/;
       - name: Running static analysis
         run: vendor/bin/phpstan analyse -l 5 src/ tests/;
       - name: Running PHPMD
