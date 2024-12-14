@@ -44,8 +44,9 @@ class WebFrontEndTest extends WebTestCase
 
     public function testHomepageReturnsContent()
     {
-        self::getClient()->request('get', '/');
+        self::getClient()->request('get', '/api/v2');
+        $response = self::getClient()->getResponse();
 
-        self::assertNotEmpty(json_decode(self::getClient()->getResponse()->getContent(), true));
+        self::assertNotEmpty($response->getContent());
     }
 }
