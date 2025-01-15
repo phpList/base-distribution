@@ -16,6 +16,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 - Security update for symfony/symfony and symfony/dependency-injection (#86)
 
+
+## 5.0.0-alpha1
+
+### Changed
+- php version 8.1
+
 ## 4.0.0-alpha2
 
 ### Added
