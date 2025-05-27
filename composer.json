@@ -29,9 +29,9 @@
     },
     "require": {
         "php": "^8.1",
-        "phplist/core": "v5.0.0-alpha6",
-        "phplist/rest-api": "v5.0.0-alpha6",
-        "phplist/web-frontend": "v5.0.0-alpha6",
+        "phplist/core": "v5.0.0-alpha7",
+        "phplist/rest-api": "v5.0.0-alpha7",
+        "phplist/web-frontend": "v5.0.0-alpha7",
         "doctrine/orm": "^3.3"
     },
     "require-dev": {
