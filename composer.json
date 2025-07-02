@@ -14,12 +14,17 @@
         {
             "name": "Xheni Myrtaj",
             "email": "xheni@phplist.com",
-            "role": "Maintainer"
+            "role": "Former developer"
         },
         {
             "name": "Oliver Klee",
             "email": "oliver@phplist.com",
             "role": "Former developer"
+        },
+        {
+            "name": "Tatevik Grigoryan",
+            "email": "tatevik@phplist.com",
+            "role": "Maintainer"
         }
     ],
     "support": {
@@ -29,9 +34,9 @@
     },
     "require": {
         "php": "^8.1",
-        "phplist/core": "v5.0.0-alpha7",
-        "phplist/rest-api": "v5.0.0-alpha7",
-        "phplist/web-frontend": "v5.0.0-alpha7",
+        "phplist/core": "v5.0.0-alpha8",
+        "phplist/rest-api": "v5.0.0-alpha8",
+        "phplist/web-frontend": "v5.0.0-alpha8",
         "doctrine/orm": "^3.3"
     },
     "require-dev": {
