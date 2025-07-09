@@ -32,12 +32,19 @@
         "forum": "https://discuss.phplist.org/",
         "source": "https://github.com/phpList/base-distribution"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tatevikgr/phplist-api-client"
+        }
+    ],
     "require": {
         "php": "^8.1",
-        "phplist/core": "v5.0.0-alpha8",
-        "phplist/rest-api": "v5.0.0-alpha8",
-        "phplist/web-frontend": "v5.0.0-alpha8",
-        "doctrine/orm": "^3.3"
+        "phplist/core": "dev-main",
+        "phplist/rest-api": "dev-main",
+        "phplist/web-frontend": "dev-master",
+        "doctrine/orm": "^3.3",
+        "tatevikgr/rest-api-client": "dev-ISSUE-357"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5.2",
