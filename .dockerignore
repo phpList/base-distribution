@@ -1,0 +1,19 @@
+# Docker build context exclusions
+.git
+.gitignore
+.github
+.idea
+.vscode
+node_modules
+npm-debug.log
+yarn.lock
+composer.phar
+var/cache
+var/logs
+var/sessions
+.env
+Dockerfile*
+docker-compose*.yml
+**/.DS_Store
+**/Thumbs.db
+vendor/

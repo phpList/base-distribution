@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    image: phplist/base-distribution:latest
+    ports:
+      - "8080:80"
+    environment:
+      # Database connection (mirrors config/parameters.yml expectations)
+      PHPLIST_DATABASE_DRIVER: pdo_mysql
+      PHPLIST_DATABASE_HOST: db
+      PHPLIST_DATABASE_PORT: 3306
+      PHPLIST_DATABASE_NAME: phplistdb
+      PHPLIST_DATABASE_USER: phplist
+      PHPLIST_DATABASE_PASSWORD: phplist
+      # Symfony environment
+      APP_ENV: prod
+      APP_DEBUG: "0"
+    depends_on:
+      - db
+    # Uncomment to persist logs/cache outside container
+    # volumes:
+    #   - ./var:/var/www/html/var
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: phplistdb
+      MYSQL_USER: phplist
+      MYSQL_PASSWORD: phplist
+      MYSQL_ROOT_PASSWORD: root
+    command: ["--default-authentication-plugin=mysql_native_password", "--innodb-buffer-pool-size=64M"]
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  db_data:
