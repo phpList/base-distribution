@@ -4,8 +4,9 @@ services:
   app:
     build: .
     image: phplist/base-distribution:latest
+    container_name: base-distribution-app
     ports:
-      - "8080:80"
+      - "8081:80"
     environment:
       # Database connection (mirrors config/parameters.yml expectations)
       PHPLIST_DATABASE_DRIVER: pdo_mysql
@@ -25,6 +26,7 @@ services:
 
   db:
     image: mysql:8.0
+    container_name: base-distribution-db
     environment:
       MYSQL_DATABASE: phplistdb
       MYSQL_USER: phplist

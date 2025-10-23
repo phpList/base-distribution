@@ -204,3 +204,8 @@ Notes:
 - You can also mount ./var to persist logs/cache between restarts. See commented volume in docker-compose.yml.
 - The container uses Apache with DocumentRoot set to /var/www/html/public and mod_rewrite enabled.
 - The base image uses PHP 8.1 (php:8.1-apache-bullseye) to match the Composer constraint (^8.1) and to ensure the IMAP build dependencies are available. You can bump to a newer 8.x tag (e.g., 8.3) if your deployment prefers it, but ensure IMAP build deps are present for that base.
+
+
+```bash
+docker exec -it base-distribution-app bash
+```
