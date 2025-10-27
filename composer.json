@@ -80,25 +80,35 @@
             "PhpList\\Core\\Composer\\ScriptHandler::createBinaries",
             "PhpList\\Core\\Composer\\ScriptHandler::createPublicWebDirectory"
         ],
-        "update-configuration": [
+        "configure-only": [
             "PhpList\\Core\\Composer\\ScriptHandler::createGeneralConfiguration",
             "PhpList\\Core\\Composer\\ScriptHandler::createBundleConfiguration",
             "PhpList\\Core\\Composer\\ScriptHandler::createRoutesConfiguration",
-            "PhpList\\Core\\Composer\\ScriptHandler::createParametersConfiguration",
-            "php bin/console cache:clear",
+            "PhpList\\Core\\Composer\\ScriptHandler::createParametersConfiguration"
+        ],
+        "warm-cache": [
+            "php bin/console cache:clear --no-warmup",
             "php bin/console cache:warmup"
+        ],
+        "setup": [
+            "@create-directories",
+            "@configure-only",
+            "@warm-cache"
         ],
         "post-install-cmd": [
             "@create-directories",
-            "@update-configuration"
+            "@configure-only",
+            "@php bin/console about || true"
         ],
         "post-update-cmd": [
             "@create-directories",
-            "@update-configuration"
+            "@configure-only",
+            "@php bin/console about || true"
         ],
         "post-create-project-cmd": [
             "@create-directories",
-            "@update-configuration"
+            "@configure-only",
+            "@php bin/console about || true"
         ]
     },
     "extra": {
