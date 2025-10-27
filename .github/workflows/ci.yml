@@ -3,12 +3,12 @@ on: [push, pull_request]
 jobs:
   main:
     name: phpList Base Dist on PHP ${{ matrix.php-versions }}, with dist ${{ matrix.dependencies }} [Build, Test]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       DB_DATABASE: phplist
       DB_USERNAME: root
       DB_PASSWORD: phplist
-      BROADCAST_DRIVER: log  
+      BROADCAST_DRIVER: log
     services:
       mysql:
         image: mysql:5.7
@@ -63,7 +63,13 @@ jobs:
       - name: Run integration tests with phpunit
         run: vendor/bin/phpunit tests/Integration/
       - name: Running the system tests
-        run: vendor/bin/phpunit tests/System/;
+        run: |
+           export PHPLIST_DATABASE_NAME=${{ env.DB_DATABASE }}
+           export PHPLIST_DATABASE_USER=${{ env.DB_USERNAME }}
+           export PHPLIST_DATABASE_PASSWORD=${{ env.DB_PASSWORD }}
+           export PHPLIST_DATABASE_PORT=${{ job.services.mysql.ports['3306'] }}
+           export PHPLIST_DATABASE_HOST=127.0.0.1
+           vendor/bin/phpunit tests/System/
       - name: Running static analysis
         run: vendor/bin/phpstan analyse -l 5 src/ tests/;
       - name: Running PHPMD
