@@ -10,11 +10,11 @@ WORKDIR /var/www/html
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         git unzip libzip-dev libicu-dev libpng-dev libonig-dev libxml2-dev \
-        libc-client2007e-dev libkrb5-dev libssl-dev \
+        libc-client2007e-dev libkrb5-dev libssl-dev libpq-dev \
     && docker-php-ext-configure intl \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-install -j"$(nproc)" \
-        pdo pdo_mysql zip intl imap \
+        pdo pdo_mysql pdo_pgsql zip intl imap \
     && rm -rf /var/lib/apt/lists/*
 
 # Enable Apache modules and set DocumentRoot to /public

@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   app:
     build: .
@@ -9,24 +7,30 @@ services:
       - "8081:80"
     environment:
       # Database connection (mirrors config/parameters.yml expectations)
-      PHPLIST_DATABASE_DRIVER: pdo_mysql
-      PHPLIST_DATABASE_HOST: db
-      PHPLIST_DATABASE_PORT: 3306
+#      PHPLIST_DATABASE_DRIVER: pdo_mysql
+#      PHPLIST_DATABASE_HOST: db
+#      PHPLIST_DATABASE_PORT: 3306
       PHPLIST_DATABASE_NAME: phplistdb
       PHPLIST_DATABASE_USER: phplist
       PHPLIST_DATABASE_PASSWORD: phplist
+      # To use PostgreSQL instead, override these (e.g. with `-e` or a compose override file):
+      PHPLIST_DATABASE_DRIVER: pdo_pgsql
+      PHPLIST_DATABASE_HOST: postgres
+      PHPLIST_DATABASE_PORT: 5432
       # Symfony environment
       APP_ENV: prod
       APP_DEBUG: "0"
     depends_on:
       - db
+    networks: [ appnet ]
+
     # Uncomment to persist logs/cache outside container
     # volumes:
     #   - ./var:/var/www/html/var
 
   db:
     image: mysql:8.0
-    container_name: base-distribution-db
+    container_name: base-distribution-mysql
     environment:
       MYSQL_DATABASE: phplistdb
       MYSQL_USER: phplist
@@ -40,6 +44,29 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
+    networks: [appnet]
+
+  postgres:
+    image: postgres:15
+    container_name: base-distribution-postgres
+    environment:
+      POSTGRES_DB: phplistdb
+      POSTGRES_USER: phplist
+      POSTGRES_PASSWORD: phplist
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [ appnet ]
+  # command to import data from mysql to postgres
+  # docker run --rm --network base-distribution_appnet dimitri/pgloader:latest   pgloader   mysql://phplist:phplist@base-distribution-mysql:3306/phplistdb   postgresql://phplist:phplist@base-distribution-postgres:5432/phplistdb
 
 volumes:
   db_data:
+  pg_data:
+
+networks:
+  appnet:
