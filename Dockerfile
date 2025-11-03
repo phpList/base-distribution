@@ -43,6 +43,11 @@ RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoload
 # Copy the rest of the application (except files ignored by .dockerignore)
 COPY . .
 
+# Build Symfony prod cache to match the current vendor code (prevents stale container issues)
+# If env vars are needed for DB during warmup, they can be provided at runtime; warmup should still succeed without DB.
+RUN php bin/console cache:clear --env=prod --no-warmup || true \
+    && php bin/console cache:warmup --env=prod || true
+
 # Ensure correct permissions for cache/logs
 RUN chown -R www-data:www-data var public \
     && find var -type d -exec chmod 775 {} \; \

@@ -53,6 +53,8 @@ services:
       POSTGRES_DB: phplistdb
       POSTGRES_USER: phplist
       POSTGRES_PASSWORD: phplist
+    ports:
+      - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
     healthcheck:

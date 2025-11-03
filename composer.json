@@ -46,6 +46,7 @@
         "php": "^8.1",
         "phplist/core": "dev-dev",
         "phplist/rest-api": "dev-dev",
+        "phplist/web-frontend": "dev-dev",
         "doctrine/orm": "^3.3",
         "tatevikgr/rest-api-client": "dev-ISSUE-357",
         "tatevikgr/rss-feed": "dev-main as 0.1.0"
