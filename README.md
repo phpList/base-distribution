@@ -185,7 +185,7 @@ The project includes a Docker setup to run phpList with Apache and MySQL.
 Quick start (development/test):
 
 - Build and start the stack: `docker compose up --build`
-- Open http://localhost:8080
+- Open [http://localhost:8081](http://localhost:8081)
 
 The app container is configured to read database settings from environment variables that match config/parameters.yml defaults. The provided docker-compose.yml sets:
 

@@ -63,12 +63,13 @@ services:
       timeout: 5s
       retries: 10
     networks: [ appnet ]
-  # command to import data from mysql to postgres
-  # docker run --rm --network base-distribution_appnet dimitri/pgloader:latest   pgloader   mysql://phplist:phplist@base-distribution-mysql:3306/phplistdb   postgresql://phplist:phplist@base-distribution-postgres:5432/phplistdb
+
+
 
 volumes:
   db_data:
   pg_data:
+  db_data_docker:
 
 networks:
   appnet:
