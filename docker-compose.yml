@@ -4,19 +4,16 @@ services:
     image: phplist/base-distribution:latest
     container_name: base-distribution-app
     ports:
-      - "8081:80"
+      - "${PHPLIST_PORT:-8081}:80"
     environment:
       # Database connection (mirrors config/parameters.yml expectations)
-#      PHPLIST_DATABASE_DRIVER: pdo_mysql
-#      PHPLIST_DATABASE_HOST: db
-#      PHPLIST_DATABASE_PORT: 3306
       PHPLIST_DATABASE_NAME: phplistdb
-      PHPLIST_DATABASE_USER: phplist
-      PHPLIST_DATABASE_PASSWORD: phplist
-      # To use PostgreSQL instead, override these (e.g. with `-e` or a compose override file):
-      PHPLIST_DATABASE_DRIVER: pdo_pgsql
-      PHPLIST_DATABASE_HOST: postgres
-      PHPLIST_DATABASE_PORT: 5432
+      PHPLIST_DATABASE_USER: ${PHPLIST_DATABASE_USER:-phplist}
+      PHPLIST_DATABASE_PASSWORD: ${PHPLIST_DATABASE_PASSWORD:-phplist}
+      PHPLIST_DATABASE_DRIVER: ${PHPLIST_DATABASE_DRIVER:-pdo_mysql} # pdo_pgsql
+      PHPLIST_DATABASE_HOST: ${PHPLIST_DATABASE_HOST:-db} # postgres
+      PHPLIST_DATABASE_PORT: ${PHPLIST_DATABASE_PORT:-3306} # 5432
+
       # Symfony environment
       APP_ENV: prod
       APP_DEBUG: "0"
@@ -63,8 +60,6 @@ services:
       timeout: 5s
       retries: 10
     networks: [ appnet ]
-
-
 
 volumes:
   db_data:
