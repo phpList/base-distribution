@@ -1,0 +1,70 @@
+services:
+  app:
+    build: .
+    image: phplist/base-distribution:latest
+    container_name: base-distribution-app
+    ports:
+      - "${PHPLIST_PORT:-8081}:80"
+    environment:
+      # Database connection (mirrors config/parameters.yml expectations)
+      PHPLIST_DATABASE_NAME: phplistdb
+      PHPLIST_DATABASE_USER: ${PHPLIST_DATABASE_USER:-phplist}
+      PHPLIST_DATABASE_PASSWORD: ${PHPLIST_DATABASE_PASSWORD:-phplist}
+      PHPLIST_DATABASE_DRIVER: ${PHPLIST_DATABASE_DRIVER:-pdo_mysql} # pdo_pgsql
+      PHPLIST_DATABASE_HOST: ${PHPLIST_DATABASE_HOST:-db} # postgres
+      PHPLIST_DATABASE_PORT: ${PHPLIST_DATABASE_PORT:-3306} # 5432
+
+      # Symfony environment
+      APP_ENV: prod
+      APP_DEBUG: "0"
+    depends_on:
+      - db
+    networks: [ appnet ]
+
+    # Uncomment to persist logs/cache outside container
+    # volumes:
+    #   - ./var:/var/www/html/var
+
+  db:
+    image: mysql:8.0
+    container_name: base-distribution-mysql
+    environment:
+      MYSQL_DATABASE: phplistdb
+      MYSQL_USER: phplist
+      MYSQL_PASSWORD: phplist
+      MYSQL_ROOT_PASSWORD: root
+    command: ["--default-authentication-plugin=mysql_native_password", "--innodb-buffer-pool-size=64M"]
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [appnet]
+
+  postgres:
+    image: postgres:15
+    container_name: base-distribution-postgres
+    environment:
+      POSTGRES_DB: phplistdb
+      POSTGRES_USER: phplist
+      POSTGRES_PASSWORD: phplist
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [ appnet ]
+
+volumes:
+  db_data:
+  pg_data:
+  db_data_docker:
+
+networks:
+  appnet:

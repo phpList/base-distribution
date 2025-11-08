@@ -176,3 +176,36 @@ contribute and how to run the unit tests and style checks locally.
 This project adheres to a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 By participating in this project and its community, you are expected to uphold
 this code.
+
+
+## Docker deployment
+
+The project includes a Docker setup to run phpList with Apache and MySQL.
+
+Quick start (development/test):
+
+- Build and start the stack: `docker compose up --build`
+- Open [http://localhost:8081](http://localhost:8081)
+
+The app container is configured to read database settings from environment variables that match config/parameters.yml defaults. The provided docker-compose.yml sets:
+
+- PHPLIST_DATABASE_HOST=db
+- PHPLIST_DATABASE_PORT=3306
+- PHPLIST_DATABASE_NAME=phplistdb
+- PHPLIST_DATABASE_USER=phplist
+- PHPLIST_DATABASE_PASSWORD=phplist
+
+Notes:
+
+- For production deployments, build and push the image, then run it behind a reverse proxy or load balancer. Example:
+  - `docker build -t your-registry/phplist-base:latest .`
+  - `docker run -p 8080:80 --env PHPLIST_DATABASE_HOST=... --env PHPLIST_DATABASE_NAME=... --env PHPLIST_DATABASE_USER=... --env PHPLIST_DATABASE_PASSWORD=... your-registry/phplist-base:latest`
+- Persist the MySQL data using the db_data volume defined in docker-compose.yml, or bind mount your own volume.
+- You can also mount ./var to persist logs/cache between restarts. See commented volume in docker-compose.yml.
+- The container uses Apache with DocumentRoot set to /var/www/html/public and mod_rewrite enabled.
+- The base image uses PHP 8.1 (php:8.1-apache-bullseye) to match the Composer constraint (^8.1) and to ensure the IMAP build dependencies are available. You can bump to a newer 8.x tag (e.g., 8.3) if your deployment prefers it, but ensure IMAP build deps are present for that base.
+
+
+```bash
+docker exec -it base-distribution-app bash
+```
