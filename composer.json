@@ -38,8 +38,8 @@
             "url": "https://github.com/tatevikgr/phplist-api-client"
         },
         {
-          "type": "vcs",
-          "url": "https://github.com/tatevikgr/rss-bundle.git"
+            "type": "vcs",
+            "url": "https://github.com/tatevikgr/rss-bundle.git"
         }
     ],
     "require": {
