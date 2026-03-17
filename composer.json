@@ -46,7 +46,6 @@
         "php": "^8.1",
         "phplist/core": "dev-dev",
         "phplist/rest-api": "dev-dev",
-        "phplist/web-frontend": "dev-feat/dashboard",
         "doctrine/orm": "^3.3",
         "tatevikgr/rest-api-client": "dev-main",
         "tatevikgr/rss-feed": "dev-main as 0.1.0"
@@ -104,6 +103,11 @@
         ]
     },
     "extra": {
+        "phplist/core": {
+            "bundles": [
+                "Nelmio\\CorsBundle\\NelmioCorsBundle"
+            ]
+        },
         "symfony-app-dir": "bin",
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
