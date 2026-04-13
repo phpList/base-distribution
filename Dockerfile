@@ -19,6 +19,10 @@ RUN apt-get update \
         pdo pdo_mysql pdo_pgsql zip intl imap gd \
     && rm -rf /var/lib/apt/lists/*
 
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt install -y nodejs \
+    && npm install -g yarn
+
 # Enable Apache modules and set DocumentRoot to /public
 RUN a2enmod rewrite headers \
     && sed -ri 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf \

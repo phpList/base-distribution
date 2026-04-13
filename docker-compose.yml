@@ -19,6 +19,10 @@ services:
       APP_DEBUG: "0"
     depends_on:
       - db
+    volumes:
+      - .:/var/www/html
+      - ./var/logs:/var/www/html/var/log
+      - ./var/cache:/var/www/html/var/cache
     networks: [ appnet ]
 
     # Uncomment to persist logs/cache outside container
