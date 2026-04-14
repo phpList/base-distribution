@@ -46,6 +46,7 @@ class WebFrontEndTest extends WebTestCase
     {
         self::getClient()->request('get', '/api/v2');
         $response = self::getClient()->getResponse();
+        self::assertNotEquals(500, $response->getStatusCode());
 
         self::assertNotEmpty($response->getContent());
     }
