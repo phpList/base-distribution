@@ -90,6 +90,10 @@
             "php bin/console cache:clear",
             "php bin/console cache:warmup"
         ],
+        "build-web-frontend-assets": [
+            "yarn install",
+            "yarn build:web-frontend"
+        ],
         "post-install-cmd": [
             "@create-directories",
             "@update-configuration"

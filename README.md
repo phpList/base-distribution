@@ -151,6 +151,14 @@ You can get a list of all installed phpList modules with this command:
 composer run-script list-modules
 ```
 
+To compile and publish the `phplist/web-frontend` assets into
+`public/build` (used by the web frontend Twig templates),
+run:
+
+```bash
+composer run-script build-web-frontend-assets
+```
+
 
 ## Creating a .tar.gz package of this distribution
 
