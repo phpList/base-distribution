@@ -13,6 +13,8 @@ services:
       PHPLIST_DATABASE_DRIVER: ${PHPLIST_DATABASE_DRIVER:-pdo_mysql} # pdo_pgsql
       PHPLIST_DATABASE_HOST: ${PHPLIST_DATABASE_HOST:-db} # postgres
       PHPLIST_DATABASE_PORT: ${PHPLIST_DATABASE_PORT:-3306} # 5432
+      REST_API_BASE_URL: 'http://app/'
+      FRONT_END_BASE_URL: 'http://app/'
 
       # Symfony environment
       APP_ENV: prod
