@@ -22,14 +22,12 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/var/www/html
       - ./var/logs:/var/www/html/var/log
       - ./var/cache:/var/www/html/var/cache
     networks: [ appnet ]
 
-    # Uncomment to persist logs/cache outside container
-    # volumes:
-    #   - ./var:/var/www/html/var
+    command: >
+      sh -c "composer run-script build-web-frontend-assets"
 
   db:
     image: mysql:8.0

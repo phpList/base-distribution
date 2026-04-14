@@ -31,7 +31,7 @@ RUN a2enmod rewrite headers \
     && a2enconf phplist
 
 # Copy composer definition first and install dependencies
-COPY composer.json composer.lock ./
+COPY composer.json composer.lock package.json yarn.lock ./
 
 # Install Composer
 ENV COMPOSER_ALLOW_SUPERUSER=1 \

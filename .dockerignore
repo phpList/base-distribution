@@ -6,7 +6,6 @@
 .vscode
 node_modules
 npm-debug.log
-yarn.lock
 composer.phar
 var/cache
 var/logs
