@@ -15,6 +15,7 @@ services:
       PHPLIST_DATABASE_PORT: ${PHPLIST_DATABASE_PORT:-3306} # 5432
       REST_API_BASE_URL: 'http://app/'
       FRONT_END_BASE_URL: 'http://app/'
+      API_BASE_URL: 'http://app/'
 
       # Symfony environment
       APP_ENV: prod
@@ -27,7 +28,13 @@ services:
     networks: [ appnet ]
 
     command: >
-      sh -c "composer run-script build-web-frontend-assets"
+      sh -c "
+      mkdir -p /var/www/html/var/cache/prod /var/www/html/var/log
+      && chown -R www-data:www-data /var/www/html/var/cache /var/www/html/var/log 
+      && chmod -R ug+rwX /var/www/html/var/cache /var/www/html/var/log
+      && composer run-script build-web-frontend-assets
+      && exec apache2-foreground
+      "
 
   db:
     image: mysql:8.0
