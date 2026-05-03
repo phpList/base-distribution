@@ -1,7 +1,7 @@
 services:
   app:
     build: .
-    image: phplist/base-distribution:latest
+    image: tatevikg1/phplist:test
     container_name: base-distribution-app
     ports:
       - "${PHPLIST_PORT:-8081}:80"
