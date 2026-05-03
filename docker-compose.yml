@@ -32,7 +32,6 @@ services:
       mkdir -p /var/www/html/var/cache/prod /var/www/html/var/log
       && chown -R www-data:www-data /var/www/html/var/cache /var/www/html/var/log 
       && chmod -R ug+rwX /var/www/html/var/cache /var/www/html/var/log
-      && composer run-script build-web-frontend-assets
       && exec apache2-foreground
       "
 

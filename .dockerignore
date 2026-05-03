@@ -9,6 +9,7 @@ npm-debug.log
 composer.phar
 var/cache
 var/logs
+var/log
 var/sessions
 .env
 Dockerfile*
@@ -16,3 +17,4 @@ docker-compose*.yml
 **/.DS_Store
 **/Thumbs.db
 vendor/
+public/build

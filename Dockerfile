@@ -59,6 +59,9 @@ RUN chown -R www-data:www-data var public \
     && find var -type d -exec chmod 775 {} \; \
     && find var -type f -exec chmod 664 {} \;
 
+# Build frontend assets once, during image build
+RUN composer run-script build-web-frontend-assets
+
 # Expose port and run Apache
 EXPOSE 80
 CMD ["apache2-foreground"]
