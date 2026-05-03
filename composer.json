@@ -48,8 +48,9 @@
         "phplist/rest-api": "dev-main",
         "phplist/web-frontend": "dev-main",
         "doctrine/orm": "^3.3",
-        "tatevikgr/rest-api-client": "dev-ISSUE-357",
-        "tatevikgr/rss-feed": "dev-main as 0.1.0"
+        "tatevikgr/rest-api-client": "dev-main",
+        "tatevikgr/rss-feed": "dev-main as 0.1.0",
+        "nelmio/cors-bundle": "^2.6"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.6.33",
@@ -90,6 +91,10 @@
             "php bin/console cache:clear",
             "php bin/console cache:warmup"
         ],
+        "build-web-frontend-assets": [
+            "yarn install",
+            "yarn build:web-frontend"
+        ],
         "post-install-cmd": [
             "@create-directories",
             "@update-configuration"
@@ -104,6 +109,11 @@
         ]
     },
     "extra": {
+        "phplist/core": {
+            "bundles": [
+                "Nelmio\\CorsBundle\\NelmioCorsBundle"
+            ]
+        },
         "symfony-app-dir": "bin",
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",

@@ -12,6 +12,7 @@
 /public/
 /var/
 /vendor/
+/node_modules/
 .DS_Store
 .vagrant
 .phpunit.result.cache
