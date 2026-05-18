@@ -1,6 +1,7 @@
 services:
   app:
     build: .
+    # todo: change to phplist dockerhub
     image: tatevikg1/phplist:test
     container_name: base-distribution-app
     ports:
