@@ -1,10 +1,11 @@
 services:
   app:
     build: .
+    # todo: change to phplist dockerhub
     image: tatevikg1/phplist:test
     container_name: base-distribution-app
     ports:
-      - "${PHPLIST_PORT:-8081}:80"
+      - "${PHPLIST_PORT:-8081}:8081"
     environment:
       # Database connection (mirrors config/parameters.yml expectations)
       PHPLIST_DATABASE_NAME: phplistdb
@@ -13,9 +14,9 @@ services:
       PHPLIST_DATABASE_DRIVER: ${PHPLIST_DATABASE_DRIVER:-pdo_mysql} # pdo_pgsql
       PHPLIST_DATABASE_HOST: ${PHPLIST_DATABASE_HOST:-db} # postgres
       PHPLIST_DATABASE_PORT: ${PHPLIST_DATABASE_PORT:-3306} # 5432
-      REST_API_BASE_URL: 'http://app/'
-      FRONT_END_BASE_URL: 'http://app/'
-      API_BASE_URL: 'http://app/'
+      REST_API_BASE_URL: 'http://app:8081/'
+      FRONT_END_BASE_URL: 'http://app:8081/'
+      API_BASE_URL: 'http://app:8081/'
 
       # Symfony environment
       APP_ENV: prod
@@ -25,6 +26,9 @@ services:
     volumes:
       - ./var/logs:/var/www/html/var/log
       - ./var/cache:/var/www/html/var/cache
+      - ./docker/apache/servername.conf:/etc/apache2/conf-enabled/servername.conf:ro
+      - ./docker/apache/ports.conf:/etc/apache2/ports.conf:ro
+      - ./docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf:ro
     networks: [ appnet ]
 
     command: >
