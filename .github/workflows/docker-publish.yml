@@ -41,7 +41,8 @@ jobs:
         with:
           images: ${{ env.DOCKERHUB_IMAGE }}
           tags: |
-            type=raw,value=test,enable={{is_default_branch}}
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=test,enable=${{ github.ref == 'refs/heads/dev' }}
             type=ref,event=tag
             type=sha,prefix=sha-
 
