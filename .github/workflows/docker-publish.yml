@@ -3,15 +3,14 @@ name: Build And Publish Container
 on:
   push:
     branches:
-      - docker-publish
+      - main
+      - dev
     tags:
       - 'v*'
-  pull_request:
-    branches:
-      - docker-publish
   workflow_dispatch:
 
 env:
+  # todo: change to phplist dockerhub
   DOCKERHUB_IMAGE: tatevikg1/phplist4
 
 jobs:
