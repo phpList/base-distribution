@@ -5,7 +5,7 @@
     "watch:web-frontend": "encore dev --watch"
   },
   "devDependencies": {
-    "@babel/core": "^7.27.4",
+    "@babel/core": "^7.29.6",
     "@babel/preset-env": "^7.27.2",
     "@symfony/webpack-encore": "^5.1.0",
     "@tailwindcss/postcss": "^4.2.1",
