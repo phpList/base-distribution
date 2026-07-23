@@ -40,6 +40,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/tatevikgr/rss-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/phpList/phplist-lan-texts"
         }
     ],
     "require": {
