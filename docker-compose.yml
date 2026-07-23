@@ -34,8 +34,11 @@ services:
     command: >
       sh -c "
       mkdir -p /var/www/html/var/cache/prod /var/www/html/var/log
-      && chown -R www-data:www-data /var/www/html/var/cache /var/www/html/var/log 
+      && chown -R www-data:www-data /var/www/html/var/cache /var/www/html/var/log
       && chmod -R ug+rwX /var/www/html/var/cache /var/www/html/var/log
+      && rm -rf /var/www/html/var/cache/prod/*
+      && php bin/console cache:clear --env=prod --no-warmup
+      && php bin/console cache:warmup --env=prod
       && exec apache2-foreground
       "
 
