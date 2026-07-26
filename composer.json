@@ -48,9 +48,9 @@
     ],
     "require": {
         "php": "^8.1",
-        "phplist/core": "dev-main",
-        "phplist/rest-api": "dev-main",
-        "phplist/web-frontend": "dev-main",
+        "phplist/core": "dev-env",
+        "phplist/rest-api": "dev-env",
+        "phplist/web-frontend": "dev-env",
         "doctrine/orm": "^3.3",
         "tatevikgr/rest-api-client": "dev-main",
         "tatevikgr/rss-feed": "dev-main as 0.1.0",
@@ -92,6 +92,7 @@
             "PhpList\\Core\\Composer\\ScriptHandler::createBundleConfiguration",
             "PhpList\\Core\\Composer\\ScriptHandler::createRoutesConfiguration",
             "PhpList\\Core\\Composer\\ScriptHandler::createParametersConfiguration",
+            "PhpList\\Core\\Composer\\ScriptHandler::createDotenvConfiguration",
             "php bin/console cache:clear",
             "php bin/console cache:warmup"
         ],

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6edcee41aeb38fa56556727f7edc7933",
+    "content-hash": "40b44e7f9a541b439108959b247138fb",
     "packages": [
         {
             "name": "async-aws/core",
@@ -702,16 +702,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "2.18.4",
+            "version": "2.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "175f8ffa7ad574e1b5ccb66f1301a21524c88ce6"
+                "reference": "07b90f707b82981097731c419f546e7ba97fba3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/175f8ffa7ad574e1b5ccb66f1301a21524c88ce6",
-                "reference": "175f8ffa7ad574e1b5ccb66f1301a21524c88ce6",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/07b90f707b82981097731c419f546e7ba97fba3c",
+                "reference": "07b90f707b82981097731c419f546e7ba97fba3c",
                 "shasum": ""
             },
             "require": {
@@ -733,7 +733,7 @@
                 "doctrine/cache": "< 1.11",
                 "doctrine/orm": "<2.17 || >=4.0",
                 "symfony/var-exporter": "< 6.4.1 || 7.0.0",
-                "twig/twig": "<2.13 || >=3.0 <3.0.4"
+                "twig/twig": "<2.13 || >=3.0 <3.0.4 || >=5"
             },
             "require-dev": {
                 "doctrine/annotations": "^1 || ^2",
@@ -761,7 +761,7 @@
                 "symfony/var-exporter": "^6.4.1 || ^7.0.1",
                 "symfony/web-profiler-bundle": "^6.4 || ^7.0",
                 "symfony/yaml": "^6.4 || ^7.0",
-                "twig/twig": "^2.14.7 || ^3.0.4"
+                "twig/twig": "^2.14.7 || ^3.0.4 || ^4"
             },
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle.",
@@ -806,7 +806,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineBundle/issues",
-                "source": "https://github.com/doctrine/DoctrineBundle/tree/2.18.4"
+                "source": "https://github.com/doctrine/DoctrineBundle/tree/2.19.0"
             },
             "funding": [
                 {
@@ -822,7 +822,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-11T08:41:11+00:00"
+            "time": "2026-07-23T14:52:05+00:00"
         },
         {
             "name": "doctrine/doctrine-fixtures-bundle",
@@ -3706,16 +3706,16 @@
         },
         {
             "name": "phplist/core",
-            "version": "dev-main",
+            "version": "dev-env",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "c5efbd8a0186030140b3882cbabe75718d191201"
+                "reference": "f078d2fbc5dd4b7a4eeacf8dc8cc1f3ec8e44138"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/c5efbd8a0186030140b3882cbabe75718d191201",
-                "reference": "c5efbd8a0186030140b3882cbabe75718d191201",
+                "url": "https://api.github.com/repos/phpList/core/zipball/f078d2fbc5dd4b7a4eeacf8dc8cc1f3ec8e44138",
+                "reference": "f078d2fbc5dd4b7a4eeacf8dc8cc1f3ec8e44138",
                 "shasum": ""
             },
             "require": {
@@ -3743,6 +3743,7 @@
                 "symfony/asset": "^6.4",
                 "symfony/config": "^6.4",
                 "symfony/dependency-injection": "^6.4",
+                "symfony/dotenv": "^6.4",
                 "symfony/error-handler": "^6.4",
                 "symfony/form": "^6.4",
                 "symfony/framework-bundle": "^6.4",
@@ -3783,7 +3784,6 @@
                 "phplist/rest-api": "5.0.x-dev",
                 "phplist/web-frontend": "5.0.x-dev"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -3858,7 +3858,7 @@
                 "source": "https://github.com/phpList/core",
                 "wiki": "https://github.com/phpList/core/wiki"
             },
-            "time": "2026-07-23T08:01:34+00:00"
+            "time": "2026-07-26T09:03:59+00:00"
         },
         {
             "name": "phplist/phplist-lan-texts",
@@ -3902,16 +3902,16 @@
         },
         {
             "name": "phplist/rest-api",
-            "version": "dev-main",
+            "version": "dev-env",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "8ba12b355ede4e2da59d1ddb99cf1e889625dc8c"
+                "reference": "3ad24e4b9991ea20ab5aafad99b8ec8de3ad048e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/8ba12b355ede4e2da59d1ddb99cf1e889625dc8c",
-                "reference": "8ba12b355ede4e2da59d1ddb99cf1e889625dc8c",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/3ad24e4b9991ea20ab5aafad99b8ec8de3ad048e",
+                "reference": "3ad24e4b9991ea20ab5aafad99b8ec8de3ad048e",
                 "shasum": ""
             },
             "require": {
@@ -3919,7 +3919,7 @@
                 "friendsofsymfony/rest-bundle": "*",
                 "nelmio/cors-bundle": "^2.4",
                 "php": "^8.1",
-                "phplist/core": "dev-main",
+                "phplist/core": "dev-env",
                 "psr/simple-cache": "^3.0",
                 "symfony/expression-language": "^6.4",
                 "symfony/process": "^6.4",
@@ -3937,7 +3937,6 @@
                 "phpunit/phpunit": "^10.0",
                 "squizlabs/php_codesniffer": "^3.2.0"
             },
-            "default-branch": true,
             "type": "phplist-module",
             "extra": {
                 "phplist/core": {
@@ -4019,26 +4018,26 @@
                 "issues": "https://github.com/phpList/rest-api/issues",
                 "source": "https://github.com/phpList/rest-api"
             },
-            "time": "2026-07-23T08:27:13+00:00"
+            "time": "2026-07-26T08:55:17+00:00"
         },
         {
             "name": "phplist/web-frontend",
-            "version": "dev-main",
+            "version": "dev-env",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/web-frontend.git",
-                "reference": "244be0d1d5825e940b7238a997df5b78736c73a4"
+                "reference": "87ac52445bc844226100ae44d65ac3d520664043"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/244be0d1d5825e940b7238a997df5b78736c73a4",
-                "reference": "244be0d1d5825e940b7238a997df5b78736c73a4",
+                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/87ac52445bc844226100ae44d65ac3d520664043",
+                "reference": "87ac52445bc844226100ae44d65ac3d520664043",
                 "shasum": ""
             },
             "require": {
                 "ext-fileinfo": "*",
                 "php": "^8.1",
-                "phplist/core": "dev-main",
+                "phplist/core": "dev-env",
                 "phplist/phplist-lan-texts": "^2021.05",
                 "psr/simple-cache": "^3.0",
                 "symfony/security-bundle": "^6.4",
@@ -4059,7 +4058,6 @@
                 "symfony/panther": "*",
                 "symfony/process": "^6.4"
             },
-            "default-branch": true,
             "type": "phplist-module",
             "extra": {
                 "phplist/core": {
@@ -4121,7 +4119,7 @@
                 "issues": "https://github.com/phpList/web-frontend/issues",
                 "source": "https://github.com/phpList/web-frontend"
             },
-            "time": "2026-07-23T09:39:39+00:00"
+            "time": "2026-07-26T09:38:29+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -7203,6 +7201,84 @@
                 }
             ],
             "time": "2026-05-19T20:33:22+00:00"
+        },
+        {
+            "name": "symfony/dotenv",
+            "version": "v6.4.42",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dotenv.git",
+                "reference": "d71597dab17919afbdffa4de14177137a4d56fdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/d71597dab17919afbdffa4de14177137a4d56fdc",
+                "reference": "d71597dab17919afbdffa4de14177137a4d56fdc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "conflict": {
+                "symfony/console": "<5.4",
+                "symfony/process": "<5.4"
+            },
+            "require-dev": {
+                "symfony/console": "^5.4|^6.0|^7.0",
+                "symfony/process": "^5.4|^6.0|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Dotenv\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Registers environment variables from a .env file",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/dotenv/tree/v6.4.42"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-06-05T06:18:55+00:00"
         },
         {
             "name": "symfony/error-handler",
@@ -13159,12 +13235,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "a149dec0fd68dfc62ce9c67b4db2542d80b4f605"
+                "reference": "e7d396822cefa7207fd352f61f68660811e108a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a149dec0fd68dfc62ce9c67b4db2542d80b4f605",
-                "reference": "a149dec0fd68dfc62ce9c67b4db2542d80b4f605",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e7d396822cefa7207fd352f61f68660811e108a4",
+                "reference": "e7d396822cefa7207fd352f61f68660811e108a4",
                 "shasum": ""
             },
             "conflict": {
@@ -13794,7 +13870,7 @@
                 "personnummer/personnummer": "<3.0.2",
                 "ph7software/ph7builder": "<=17.9.1",
                 "phanan/koel": "<=9.7",
-                "pheditor/pheditor": "<2.0.6",
+                "pheditor/pheditor": "<2.0.8",
                 "phenx/php-svg-lib": "<0.5.2",
                 "php-censor/php-censor": "<2.0.13|>=2.1,<2.1.5",
                 "php-mod/curl": "<2.3.2",
@@ -13810,7 +13886,7 @@
                 "phpoffice/common": "<0.2.9",
                 "phpoffice/math": "<=0.2",
                 "phpoffice/phpexcel": "<=1.8.2",
-                "phpoffice/phpspreadsheet": "<=1.30.4|>=2,<=2.1.15|>=2.2,<=2.4.4|>=3,<=3.10.4|>=4,<=5.6",
+                "phpoffice/phpspreadsheet": "<=1.30.5|>=2,<=2.1.17|>=2.2,<=2.4.6|>=3,<=3.10.6|>=4,<=5.8",
                 "phppgadmin/phppgadmin": "<=7.13",
                 "phpseclib/phpseclib": "<=2.0.54|>=3,<=3.0.53",
                 "phpservermon/phpservermon": "<3.6",
@@ -13837,7 +13913,7 @@
                 "pocketmine/pocketmine-mp": "<5.42.1",
                 "pocketmine/raklib": ">=0.14,<0.14.6|>=0.15,<0.15.1",
                 "pontedilana/php-weasyprint": "<=2.5.1",
-                "poweradmin/poweradmin": "<4.2.4|>=4.3,<4.3.3",
+                "poweradmin/poweradmin": "<4.2.5|>=4.3,<4.3.4",
                 "pressbooks/pressbooks": "<5.18",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
                 "prestashop/blockreassurance": "<=5.1.3",
@@ -14272,7 +14348,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-22T23:02:35+00:00"
+            "time": "2026-07-24T23:00:42+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
