@@ -97,7 +97,7 @@
             "php bin/console cache:warmup"
         ],
         "build-web-frontend-assets": [
-            "yarn install",
+            "yarn install --frozen-lockfile --non-interactive",
             "yarn build:web-frontend"
         ],
         "post-install-cmd": [
