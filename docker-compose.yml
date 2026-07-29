@@ -20,7 +20,8 @@ services:
       APP_ENV: prod
       APP_DEBUG: "0"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     volumes:
       - ./var/logs:/var/www/html/var/log
       - ./var/cache:/var/www/html/var/cache
