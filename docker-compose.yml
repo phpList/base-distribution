@@ -11,10 +11,10 @@ services:
       PHPLIST_DATABASE_USER: ${PHPLIST_DATABASE_USER:-phplist}
       PHPLIST_DATABASE_PASSWORD: ${PHPLIST_DATABASE_PASSWORD:-phplist}
       PHPLIST_DATABASE_DRIVER: ${PHPLIST_DATABASE_DRIVER:-pdo_mysql} # pdo_pgsql
-      PHPLIST_DATABASE_HOST: ${PHPLIST_DATABASE_HOST:-db} # postgres
-      PHPLIST_DATABASE_PORT: ${PHPLIST_DATABASE_PORT:-3306} # 5432
-      FRONT_END_BASE_URL: ${FRONT_END_BASE_URL:-http://localhost:${PHPLIST_PORT:-8081}/}
-      API_BASE_URL: ${API_BASE_URL:-http://localhost:${PHPLIST_PORT:-8081}/}
+      PHPLIST_DATABASE_HOST: db # postgres
+      PHPLIST_DATABASE_PORT: 3306 # 5432
+      FRONT_END_BASE_URL: 'http://app:8081/'
+      API_BASE_URL: 'http://app:8081/'
 
       # Symfony environment
       APP_ENV: prod
