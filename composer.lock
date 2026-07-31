@@ -3710,12 +3710,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "8d28d3b7c87e82655971383910ed7693fbb8aec7"
+                "reference": "d24769b54975f2ac9ef9837bfdfa6cd4db34febe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/8d28d3b7c87e82655971383910ed7693fbb8aec7",
-                "reference": "8d28d3b7c87e82655971383910ed7693fbb8aec7",
+                "url": "https://api.github.com/repos/phpList/core/zipball/d24769b54975f2ac9ef9837bfdfa6cd4db34febe",
+                "reference": "d24769b54975f2ac9ef9837bfdfa6cd4db34febe",
                 "shasum": ""
             },
             "require": {
@@ -3858,7 +3858,7 @@
                 "source": "https://github.com/phpList/core",
                 "wiki": "https://github.com/phpList/core/wiki"
             },
-            "time": "2026-07-29T17:37:26+00:00"
+            "time": "2026-07-31T07:56:27+00:00"
         },
         {
             "name": "phplist/phplist-lan-texts",
@@ -3906,12 +3906,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "f9ee62d6c660ae45d8df536390820929fb1aa4cc"
+                "reference": "eb52ad4d82bf17c876441d35bcf22c8ef18ce75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/f9ee62d6c660ae45d8df536390820929fb1aa4cc",
-                "reference": "f9ee62d6c660ae45d8df536390820929fb1aa4cc",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/eb52ad4d82bf17c876441d35bcf22c8ef18ce75c",
+                "reference": "eb52ad4d82bf17c876441d35bcf22c8ef18ce75c",
                 "shasum": ""
             },
             "require": {
@@ -4018,7 +4018,7 @@
                 "issues": "https://github.com/phpList/rest-api/issues",
                 "source": "https://github.com/phpList/rest-api"
             },
-            "time": "2026-07-29T17:44:56+00:00"
+            "time": "2026-07-31T08:38:48+00:00"
         },
         {
             "name": "phplist/web-frontend",
@@ -4026,12 +4026,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/web-frontend.git",
-                "reference": "88c00fca125819b679dbcb79ae5006580d1e5dea"
+                "reference": "cbf56ab75e451aa92491f019dd7929626f449bb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/88c00fca125819b679dbcb79ae5006580d1e5dea",
-                "reference": "88c00fca125819b679dbcb79ae5006580d1e5dea",
+                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/cbf56ab75e451aa92491f019dd7929626f449bb2",
+                "reference": "cbf56ab75e451aa92491f019dd7929626f449bb2",
                 "shasum": ""
             },
             "require": {
@@ -4119,7 +4119,7 @@
                 "issues": "https://github.com/phpList/web-frontend/issues",
                 "source": "https://github.com/phpList/web-frontend"
             },
-            "time": "2026-07-29T17:43:08+00:00"
+            "time": "2026-07-29T18:24:18+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -13235,12 +13235,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e0739cf6f94302acbdfb1807731568a47830bb4d"
+                "reference": "65b89988ea149da6864f93c3030fd5c24991431d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e0739cf6f94302acbdfb1807731568a47830bb4d",
-                "reference": "e0739cf6f94302acbdfb1807731568a47830bb4d",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/65b89988ea149da6864f93c3030fd5c24991431d",
+                "reference": "65b89988ea149da6864f93c3030fd5c24991431d",
                 "shasum": ""
             },
             "conflict": {
@@ -13846,8 +13846,10 @@
                 "oro/customer-portal": ">=4.1,<=4.1.13|>=4.2,<=4.2.10|>=5,<=5.0.11|>=5.1,<=5.1.3",
                 "oro/platform": ">=1.7,<1.7.4|>=3.1,<3.1.29|>=4.1,<4.1.17|>=4.2,<=4.2.10|>=5,<=5.0.12|>=5.1,<=5.1.3",
                 "oveleon/contao-cookiebar": "<1.16.3|>=2,<2.1.3",
-                "oxid-esales/oxideshop-ce": "<=7.0.5",
+                "oxid-esales/oxideshop-ce": "<4.5|>=6,<6.14.4",
+                "oxid-esales/oxideshop-metapackage-ce": ">=6,<6.5.5",
                 "oxid-esales/paymorrow-module": ">=1,<1.0.2|>=2,<2.0.1",
+                "oxid-esales/smarty-component": "<1.0.1",
                 "packbackbooks/lti-1-3-php-library": "<5",
                 "padraic/humbug_get_contents": "<1.1.2",
                 "pagarme/pagarme-php": "<3",
@@ -14349,7 +14351,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-28T15:20:31+00:00"
+            "time": "2026-07-30T23:07:05+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
