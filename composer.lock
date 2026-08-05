@@ -3710,12 +3710,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "d24769b54975f2ac9ef9837bfdfa6cd4db34febe"
+                "reference": "5387bb89e42abd3ff4eb11fea104becb6750eaee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/d24769b54975f2ac9ef9837bfdfa6cd4db34febe",
-                "reference": "d24769b54975f2ac9ef9837bfdfa6cd4db34febe",
+                "url": "https://api.github.com/repos/phpList/core/zipball/5387bb89e42abd3ff4eb11fea104becb6750eaee",
+                "reference": "5387bb89e42abd3ff4eb11fea104becb6750eaee",
                 "shasum": ""
             },
             "require": {
@@ -3743,6 +3743,7 @@
                 "symfony/asset": "^6.4",
                 "symfony/config": "^6.4",
                 "symfony/dependency-injection": "^6.4",
+                "symfony/doctrine-messenger": "^6.4",
                 "symfony/dotenv": "^6.4",
                 "symfony/error-handler": "^6.4",
                 "symfony/form": "^6.4",
@@ -3858,7 +3859,7 @@
                 "source": "https://github.com/phpList/core",
                 "wiki": "https://github.com/phpList/core/wiki"
             },
-            "time": "2026-07-31T07:56:27+00:00"
+            "time": "2026-08-04T12:39:43+00:00"
         },
         {
             "name": "phplist/phplist-lan-texts",
@@ -3906,12 +3907,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "eb52ad4d82bf17c876441d35bcf22c8ef18ce75c"
+                "reference": "7129cec9c00d13810db1117d229140144477ecd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/eb52ad4d82bf17c876441d35bcf22c8ef18ce75c",
-                "reference": "eb52ad4d82bf17c876441d35bcf22c8ef18ce75c",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/7129cec9c00d13810db1117d229140144477ecd8",
+                "reference": "7129cec9c00d13810db1117d229140144477ecd8",
                 "shasum": ""
             },
             "require": {
@@ -4018,7 +4019,7 @@
                 "issues": "https://github.com/phpList/rest-api/issues",
                 "source": "https://github.com/phpList/rest-api"
             },
-            "time": "2026-07-31T08:38:48+00:00"
+            "time": "2026-08-04T12:37:05+00:00"
         },
         {
             "name": "phplist/web-frontend",
@@ -4026,12 +4027,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/web-frontend.git",
-                "reference": "cbf56ab75e451aa92491f019dd7929626f449bb2"
+                "reference": "dab6039fef469fe658b9528bab846308a5aab5f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/cbf56ab75e451aa92491f019dd7929626f449bb2",
-                "reference": "cbf56ab75e451aa92491f019dd7929626f449bb2",
+                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/dab6039fef469fe658b9528bab846308a5aab5f0",
+                "reference": "dab6039fef469fe658b9528bab846308a5aab5f0",
                 "shasum": ""
             },
             "require": {
@@ -4119,7 +4120,7 @@
                 "issues": "https://github.com/phpList/web-frontend/issues",
                 "source": "https://github.com/phpList/web-frontend"
             },
-            "time": "2026-07-29T18:24:18+00:00"
+            "time": "2026-08-05T15:25:15+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -7130,6 +7131,82 @@
                 }
             ],
             "time": "2026-07-21T10:19:36+00:00"
+        },
+        {
+            "name": "symfony/doctrine-messenger",
+            "version": "v6.4.42",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/doctrine-messenger.git",
+                "reference": "21e0d6e210270d1ebff2fa0dace165627c49119f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/doctrine-messenger/zipball/21e0d6e210270d1ebff2fa0dace165627c49119f",
+                "reference": "21e0d6e210270d1ebff2fa0dace165627c49119f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.13|^3|^4",
+                "php": ">=8.1",
+                "symfony/messenger": "^5.4|^6.0|^7.0",
+                "symfony/service-contracts": "^2.5|^3"
+            },
+            "conflict": {
+                "doctrine/persistence": "<1.3"
+            },
+            "require-dev": {
+                "doctrine/persistence": "^1.3|^2|^3",
+                "symfony/property-access": "^5.4|^6.0|^7.0",
+                "symfony/serializer": "^5.4|^6.0|^7.0"
+            },
+            "type": "symfony-messenger-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Messenger\\Bridge\\Doctrine\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Doctrine Messenger Bridge",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/doctrine-messenger/tree/v6.4.42"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-06-16T14:52:47+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -13235,12 +13312,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "65b89988ea149da6864f93c3030fd5c24991431d"
+                "reference": "50bd2d8224ed2c0a6db8a050790c9c1b9e8acf26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/65b89988ea149da6864f93c3030fd5c24991431d",
-                "reference": "65b89988ea149da6864f93c3030fd5c24991431d",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/50bd2d8224ed2c0a6db8a050790c9c1b9e8acf26",
+                "reference": "50bd2d8224ed2c0a6db8a050790c9c1b9e8acf26",
                 "shasum": ""
             },
             "conflict": {
@@ -13592,7 +13669,7 @@
                 "gregwar/rst": "<1.0.3",
                 "grumpydictator/firefly-iii": "<=6.6.2",
                 "gugoan/economizzer": "<=0.9.0.0-beta1",
-                "guzzlehttp/guzzle": "<7.15.1",
+                "guzzlehttp/guzzle": "<7.15.2|>=8,<8.0.1",
                 "guzzlehttp/guzzle-services": "<1.5.4",
                 "guzzlehttp/oauth-subscriber": "<0.8.1",
                 "guzzlehttp/psr7": "<2.12.3",
@@ -13713,7 +13790,7 @@
                 "librenms/librenms": "<26.3",
                 "liftkit/database": "<2.13.2",
                 "lightsaml/lightsaml": "<1.3.5",
-                "limesurvey/limesurvey": "<6.15.4",
+                "limesurvey/limesurvey": "<=7.0.0.0-beta1",
                 "livehelperchat/livehelperchat": "<=3.91",
                 "livewire-filemanager/filemanager": "<=1.0.4",
                 "livewire/livewire": "<2.12.7|>=3.0.0.0-beta1,<3.6.4",
@@ -13954,7 +14031,7 @@
                 "rap2hpoutre/laravel-log-viewer": "<0.13",
                 "react/http": ">=0.7,<1.9",
                 "really-simple-plugins/complianz-gdpr": "<6.4.2",
-                "redaxo/source": "<5.21",
+                "redaxo/source": "<5.21.1",
                 "remdex/livehelperchat": "<4.29",
                 "renolit/reint-downloadmanager": "<4.0.2|>=5,<5.0.1",
                 "reportico-web/reportico": "<=8.1",
@@ -14011,8 +14088,8 @@
                 "silverstripe/versioned-admin": ">=1,<1.11.1",
                 "simogeo/filemanager": "<=2.5",
                 "simple-updates/phpwhois": "<=1",
-                "simplesamlphp/saml2": "<=4.20.2|>=5,<5.0.6|>=6,<6.2.1",
-                "simplesamlphp/saml2-legacy": "<=4.20.2",
+                "simplesamlphp/saml2": "<4.19.3|>=4.20,<=4.20.2|>=5,<5.0.6|>=6,<6.2.1",
+                "simplesamlphp/saml2-legacy": "<4.19.3|>=4.20,<=4.20.2",
                 "simplesamlphp/simplesamlphp": "<=2.4.6|>=2.5,<=2.5.1",
                 "simplesamlphp/simplesamlphp-module-casserver": "<=7.0.2",
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
@@ -14068,6 +14145,7 @@
                 "sylius/admin-bundle": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
                 "sylius/grid": ">=1,<1.1.19|>=1.2,<1.2.18|>=1.3,<1.3.13|>=1.4,<1.4.5|>=1.5,<1.5.1",
                 "sylius/grid-bundle": "<1.10.1",
+                "sylius/mollie-plugin": "<2.2.8|>=3,<3.2.4|>=3.3,<3.3.1",
                 "sylius/paypal-plugin": "<1.6.2|>=1.7,<1.7.2|>=2,<2.0.2",
                 "sylius/resource-bundle": ">=1,<1.3.14|>=1.4,<1.4.7|>=1.5,<1.5.2|>=1.6,<1.6.4",
                 "sylius/sylius": "<1.9.12|>=1.10,<1.10.16|>=1.11,<1.11.17|>=1.12,<=1.12.22|>=1.13,<=1.13.14|>=1.14,<=1.14.17|>=2,<2.0.18|>=2.1,<2.1.15|>=2.2,<2.2.6",
@@ -14246,7 +14324,7 @@
                 "woocommerce/woocommerce": "<6.6|>=8.8,<8.8.5|>=8.9,<8.9.3",
                 "wp-cli/wp-cli": ">=0.12,<2.5",
                 "wp-coding-standards/wpcs": ">=0.14.1,<3.4.1",
-                "wp-graphql/wp-graphql": "<=1.14.5",
+                "wp-graphql/wp-graphql": "<=2.6",
                 "wp-premium/gravityforms": "<2.4.21",
                 "wpanel/wpanel4-cms": "<=4.3.1",
                 "wpcloud/wp-stateless": "<3.2",
@@ -14351,7 +14429,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-30T23:07:05+00:00"
+            "time": "2026-08-05T12:51:34+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
