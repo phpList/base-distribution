@@ -3711,12 +3711,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "6a25cf3969d39203039a748c011e7212d81cb82b"
+                "reference": "8b844f98f1b5b192195ff2076e8f40c547c31285"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/6a25cf3969d39203039a748c011e7212d81cb82b",
-                "reference": "6a25cf3969d39203039a748c011e7212d81cb82b",
+                "url": "https://api.github.com/repos/phpList/core/zipball/8b844f98f1b5b192195ff2076e8f40c547c31285",
+                "reference": "8b844f98f1b5b192195ff2076e8f40c547c31285",
                 "shasum": ""
             },
             "require": {
@@ -3860,7 +3860,7 @@
                 "source": "https://github.com/phpList/core",
                 "wiki": "https://github.com/phpList/core/wiki"
             },
-            "time": "2026-08-20T08:43:23+00:00"
+            "time": "2026-08-20T12:14:26+00:00"
         },
         {
             "name": "phplist/phplist-lan-texts",
@@ -3908,12 +3908,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "d40679d24a523dcc80bdd50064c049da7fbba1bd"
+                "reference": "316b3a9b8cd89978daef3666f5b9a71b6239fc5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/d40679d24a523dcc80bdd50064c049da7fbba1bd",
-                "reference": "d40679d24a523dcc80bdd50064c049da7fbba1bd",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/316b3a9b8cd89978daef3666f5b9a71b6239fc5b",
+                "reference": "316b3a9b8cd89978daef3666f5b9a71b6239fc5b",
                 "shasum": ""
             },
             "require": {
@@ -4020,7 +4020,7 @@
                 "issues": "https://github.com/phpList/rest-api/issues",
                 "source": "https://github.com/phpList/rest-api"
             },
-            "time": "2026-08-17T08:23:00+00:00"
+            "time": "2026-08-20T11:03:38+00:00"
         },
         {
             "name": "phplist/web-frontend",
@@ -4028,12 +4028,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/web-frontend.git",
-                "reference": "bb2b81011eaa4d65ceca39618cf22d57e7d67d38"
+                "reference": "cae1e63d742e3e18a00f3f19da7602dac840e521"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/bb2b81011eaa4d65ceca39618cf22d57e7d67d38",
-                "reference": "bb2b81011eaa4d65ceca39618cf22d57e7d67d38",
+                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/cae1e63d742e3e18a00f3f19da7602dac840e521",
+                "reference": "cae1e63d742e3e18a00f3f19da7602dac840e521",
                 "shasum": ""
             },
             "require": {
@@ -4121,7 +4121,7 @@
                 "issues": "https://github.com/phpList/web-frontend/issues",
                 "source": "https://github.com/phpList/web-frontend"
             },
-            "time": "2026-08-19T09:05:12+00:00"
+            "time": "2026-08-20T12:48:21+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -12153,12 +12153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TatevikGr/phplist-api-client.git",
-                "reference": "c4ab4107b76e5c05c8982bc2b875a9f45e1a7736"
+                "reference": "2ee70b9dc32818d90816192d29cc53cf5d6d1b20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TatevikGr/phplist-api-client/zipball/c4ab4107b76e5c05c8982bc2b875a9f45e1a7736",
-                "reference": "c4ab4107b76e5c05c8982bc2b875a9f45e1a7736",
+                "url": "https://api.github.com/repos/TatevikGr/phplist-api-client/zipball/2ee70b9dc32818d90816192d29cc53cf5d6d1b20",
+                "reference": "2ee70b9dc32818d90816192d29cc53cf5d6d1b20",
                 "shasum": ""
             },
             "require": {
@@ -12194,7 +12194,7 @@
                 "source": "https://github.com/TatevikGr/phplist-api-client/tree/dev",
                 "issues": "https://github.com/TatevikGr/phplist-api-client/issues"
             },
-            "time": "2026-08-17T08:57:28+00:00"
+            "time": "2026-08-20T11:09:14+00:00"
         },
         {
             "name": "tatevikgr/rss-feed",
