@@ -16,11 +16,16 @@ services:
       FRONT_END_BASE_URL: 'http://app:8081/'
       API_BASE_URL: 'http://app:8081/'
 
-      # Symfony environment
+      # Elasticsearch
+      ELASTICSEARCH_HOST: elasticsearch
+      ELASTICSEARCH_PORT: 9200
+
       APP_ENV: prod
       APP_DEBUG: "0"
     depends_on:
       db:
+        condition: service_healthy
+      elasticsearch:
         condition: service_healthy
     volumes:
       - ./var/logs:/var/www/html/var/log
@@ -77,10 +82,25 @@ services:
       retries: 10
     networks: [ appnet ]
 
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.5.2
+    container_name: base-distribution-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks: [appnet]
+
 volumes:
   db_data:
   pg_data:
   db_data_docker:
+  es_data:
 
 networks:
   appnet:

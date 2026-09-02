@@ -54,7 +54,8 @@
         "doctrine/orm": "^3.3",
         "tatevikgr/rest-api-client": "dev-dev",
         "tatevikgr/rss-feed": "dev-main as 0.1.0",
-        "nelmio/cors-bundle": "^2.6"
+        "nelmio/cors-bundle": "^2.6",
+        "elasticsearch/elasticsearch": "^8.9"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.6.33",
