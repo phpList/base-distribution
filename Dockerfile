@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Build a production image for phpList base-distribution (Symfony-based)
-FROM php:8.1-apache-bullseye
+FROM php:8.1-apache-bookworm
 
 # Set workdir
 WORKDIR /var/www/html
