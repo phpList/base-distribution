@@ -12,6 +12,7 @@ Encore
     .addStyleEntry('styles', './vendor/phplist/web-frontend/assets/styles/app.css')
     .enableVueLoader(() => {}, { version: 3 })
     .enableSingleRuntimeChunk()
+    .enableVersioning(Encore.isProduction())
     .enablePostCssLoader()
     .copyFiles({
         from: './vendor/phplist/web-frontend/assets/images',

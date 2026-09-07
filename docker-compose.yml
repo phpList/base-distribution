@@ -1,37 +1,48 @@
 services:
   app:
-    build: .
-    image: tatevikg1/phplist:test
+    # todo: change to phplist dockerhub
+    image: tatevikg1/phplist4:test
     container_name: base-distribution-app
     ports:
-      - "${PHPLIST_PORT:-8081}:80"
+      - "${PHPLIST_PORT:-8081}:8081"
     environment:
       # Database connection (mirrors config/parameters.yml expectations)
       PHPLIST_DATABASE_NAME: phplistdb
       PHPLIST_DATABASE_USER: ${PHPLIST_DATABASE_USER:-phplist}
       PHPLIST_DATABASE_PASSWORD: ${PHPLIST_DATABASE_PASSWORD:-phplist}
       PHPLIST_DATABASE_DRIVER: ${PHPLIST_DATABASE_DRIVER:-pdo_mysql} # pdo_pgsql
-      PHPLIST_DATABASE_HOST: ${PHPLIST_DATABASE_HOST:-db} # postgres
-      PHPLIST_DATABASE_PORT: ${PHPLIST_DATABASE_PORT:-3306} # 5432
-      REST_API_BASE_URL: 'http://app/'
-      FRONT_END_BASE_URL: 'http://app/'
-      API_BASE_URL: 'http://app/'
+      PHPLIST_DATABASE_HOST: db # postgres
+      PHPLIST_DATABASE_PORT: 3306 # 5432
+      FRONT_END_BASE_URL: 'http://app:8081/'
+      API_BASE_URL: 'http://app:8081/'
 
-      # Symfony environment
+      # Elasticsearch
+      ELASTICSEARCH_HOST: elasticsearch
+      ELASTICSEARCH_PORT: 9200
+
       APP_ENV: prod
       APP_DEBUG: "0"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
     volumes:
       - ./var/logs:/var/www/html/var/log
       - ./var/cache:/var/www/html/var/cache
+      - ./docker/apache/servername.conf:/etc/apache2/conf-enabled/servername.conf:ro
+      - ./docker/apache/ports.conf:/etc/apache2/ports.conf:ro
+      - ./docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf:ro
     networks: [ appnet ]
 
     command: >
       sh -c "
       mkdir -p /var/www/html/var/cache/prod /var/www/html/var/log
-      && chown -R www-data:www-data /var/www/html/var/cache /var/www/html/var/log 
+      && chown -R www-data:www-data /var/www/html/var/cache /var/www/html/var/log
       && chmod -R ug+rwX /var/www/html/var/cache /var/www/html/var/log
+      && rm -rf /var/www/html/var/cache/prod/*
+      && php bin/console cache:clear --env=prod --no-warmup
+      && php bin/console cache:warmup --env=prod
       && exec apache2-foreground
       "
 
@@ -71,10 +82,25 @@ services:
       retries: 10
     networks: [ appnet ]
 
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.5.2
+    container_name: base-distribution-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks: [appnet]
+
 volumes:
   db_data:
   pg_data:
   db_data_docker:
+  es_data:
 
 networks:
   appnet:
