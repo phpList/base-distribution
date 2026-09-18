@@ -4287,15 +4287,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/web-frontend.git",
-                "reference": "3e41f56d2bbbf80826d5aa8d5c42f8621f287199"
+                "reference": "6af8a0343fc3fb42c8d5857be543b217d6d43043"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/3e41f56d2bbbf80826d5aa8d5c42f8621f287199",
-                "reference": "3e41f56d2bbbf80826d5aa8d5c42f8621f287199",
+                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/6af8a0343fc3fb42c8d5857be543b217d6d43043",
+                "reference": "6af8a0343fc3fb42c8d5857be543b217d6d43043",
                 "shasum": ""
             },
             "require": {
+                "elasticsearch/elasticsearch": "^8.9",
                 "ext-fileinfo": "*",
                 "php": "^8.1",
                 "phplist/core": "dev-dev",
@@ -4389,7 +4390,7 @@
                 "issues": "https://github.com/phpList/web-frontend/issues",
                 "source": "https://github.com/phpList/web-frontend"
             },
-            "time": "2026-09-09T15:21:57+00:00"
+            "time": "2026-09-18T10:03:29+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -12583,12 +12584,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TatevikGr/phplist-api-client.git",
-                "reference": "99ba6b00666362c09d19684a5aa7333864a09dc0"
+                "reference": "534e254bf6ca4fd06a5cf2eb246a0033d926be76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TatevikGr/phplist-api-client/zipball/99ba6b00666362c09d19684a5aa7333864a09dc0",
-                "reference": "99ba6b00666362c09d19684a5aa7333864a09dc0",
+                "url": "https://api.github.com/repos/TatevikGr/phplist-api-client/zipball/534e254bf6ca4fd06a5cf2eb246a0033d926be76",
+                "reference": "534e254bf6ca4fd06a5cf2eb246a0033d926be76",
                 "shasum": ""
             },
             "require": {
@@ -12624,7 +12625,7 @@
                 "source": "https://github.com/TatevikGr/phplist-api-client/tree/dev",
                 "issues": "https://github.com/TatevikGr/phplist-api-client/issues"
             },
-            "time": "2026-09-09T15:21:51+00:00"
+            "time": "2026-09-18T09:19:02+00:00"
         },
         {
             "name": "tatevikgr/rss-feed",
@@ -12751,16 +12752,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.28.0",
+            "version": "v3.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "597c12ed286fb9d1701a36684ce6e0cbe28ebc8b"
+                "reference": "45a3c6e9224c3377a39c7b150bb29d5d97d2c75d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/597c12ed286fb9d1701a36684ce6e0cbe28ebc8b",
-                "reference": "597c12ed286fb9d1701a36684ce6e0cbe28ebc8b",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/45a3c6e9224c3377a39c7b150bb29d5d97d2c75d",
+                "reference": "45a3c6e9224c3377a39c7b150bb29d5d97d2c75d",
                 "shasum": ""
             },
             "require": {
@@ -12815,7 +12816,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.28.0"
+                "source": "https://github.com/twigphp/Twig/tree/v3.29.0"
             },
             "funding": [
                 {
@@ -12827,7 +12828,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-03T20:44:34+00:00"
+            "time": "2026-09-18T09:10:14+00:00"
         },
         {
             "name": "voku/portable-ascii",
