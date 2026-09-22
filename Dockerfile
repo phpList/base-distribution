@@ -1,17 +1,22 @@
 # syntax=docker/dockerfile:1
 
 # Build a production image for phpList base-distribution (Symfony-based)
-FROM php:8.1-apache-bullseye
+FROM php:8.1-apache-bookworm
 
 # Set workdir
 WORKDIR /var/www/html
 
 # Install system dependencies and PHP extensions
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        git unzip libzip-dev libicu-dev libpng-dev libonig-dev libxml2-dev \
-        libc-client2007e-dev libkrb5-dev libssl-dev libpq-dev \
-        libfreetype6-dev libjpeg62-turbo-dev \
+# Retry apt operations to survive transient mirror connection drops (common on arm64 runners)
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
+RUN for i in 1 2 3; do apt-get update && break || sleep 5; done \
+    && for i in 1 2 3; do \
+        apt-get install -y --no-install-recommends \
+            git unzip libzip-dev libicu-dev libpng-dev libonig-dev libxml2-dev \
+            libc-client2007e-dev libkrb5-dev libssl-dev libpq-dev \
+            libfreetype6-dev libjpeg62-turbo-dev \
+        && break || sleep 5; \
+       done \
     && docker-php-ext-configure intl \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
