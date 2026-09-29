@@ -24,10 +24,6 @@ RUN for i in 1 2 3; do apt-get update && break || sleep 5; done \
         pdo pdo_mysql pdo_pgsql zip intl imap gd \
     && rm -rf /var/lib/apt/lists/*
 
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt install -y nodejs \
-    && npm install -g yarn
-
 # Enable Apache modules and set DocumentRoot to /public
 RUN a2enmod rewrite headers \
     && sed -ri 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf \
@@ -36,7 +32,7 @@ RUN a2enmod rewrite headers \
     && a2enconf phplist
 
 # Copy composer definition first and install dependencies
-COPY composer.json composer.lock package.json yarn.lock ./
+COPY composer.json composer.lock ./
 
 # Install Composer
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
@@ -64,7 +60,7 @@ RUN chown -R www-data:www-data var public \
     && find var -type d -exec chmod 775 {} \; \
     && find var -type f -exec chmod 664 {} \;
 
-# Build frontend assets once, during image build
+# Copy the pre-built phplist/web-frontend assets into public/build
 RUN composer run-script build-web-frontend-assets
 
 # Expose port and run Apache
