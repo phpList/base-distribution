@@ -1,27 +1,28 @@
 # syntax=docker/dockerfile:1
 
 # Build a production image for phpList base-distribution (Symfony-based)
-FROM php:8.1-apache-bullseye
+FROM php:8.1-apache-bookworm
 
 # Set workdir
 WORKDIR /var/www/html
 
 # Install system dependencies and PHP extensions
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        git unzip libzip-dev libicu-dev libpng-dev libonig-dev libxml2-dev \
-        libc-client2007e-dev libkrb5-dev libssl-dev libpq-dev \
-        libfreetype6-dev libjpeg62-turbo-dev \
+# Retry apt operations to survive transient mirror connection drops (common on arm64 runners)
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
+RUN for i in 1 2 3; do apt-get update && break || sleep 5; done \
+    && for i in 1 2 3; do \
+        apt-get install -y --no-install-recommends \
+            git unzip libzip-dev libicu-dev libpng-dev libonig-dev libxml2-dev \
+            libc-client2007e-dev libkrb5-dev libssl-dev libpq-dev \
+            libfreetype6-dev libjpeg62-turbo-dev \
+        && break || sleep 5; \
+       done \
     && docker-php-ext-configure intl \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j"$(nproc)" \
         pdo pdo_mysql pdo_pgsql zip intl imap gd \
     && rm -rf /var/lib/apt/lists/*
-
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt install -y nodejs \
-    && npm install -g yarn
 
 # Enable Apache modules and set DocumentRoot to /public
 RUN a2enmod rewrite headers \
@@ -31,7 +32,7 @@ RUN a2enmod rewrite headers \
     && a2enconf phplist
 
 # Copy composer definition first and install dependencies
-COPY composer.json composer.lock package.json yarn.lock ./
+COPY composer.json composer.lock ./
 
 # Install Composer
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
@@ -59,7 +60,7 @@ RUN chown -R www-data:www-data var public \
     && find var -type d -exec chmod 775 {} \; \
     && find var -type f -exec chmod 664 {} \;
 
-# Build frontend assets once, during image build
+# Copy the pre-built phplist/web-frontend assets into public/build
 RUN composer run-script build-web-frontend-assets
 
 # Expose port and run Apache
