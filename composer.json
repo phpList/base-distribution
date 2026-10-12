@@ -102,15 +102,18 @@
         ],
         "post-install-cmd": [
             "@create-directories",
-            "@update-configuration"
+            "@update-configuration",
+            "@build-web-frontend-assets"
         ],
         "post-update-cmd": [
             "@create-directories",
-            "@update-configuration"
+            "@update-configuration",
+            "@build-web-frontend-assets"
         ],
         "post-create-project-cmd": [
             "@create-directories",
-            "@update-configuration"
+            "@update-configuration",
+            "@build-web-frontend-assets"
         ]
     },
     "extra": {
