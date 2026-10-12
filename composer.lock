@@ -1332,16 +1332,16 @@
         },
         {
             "name": "doctrine/migrations",
-            "version": "3.9.7",
+            "version": "3.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "96cb2a89b56c9efb0bac38e606dc0b0f13e650ec"
+                "reference": "eb0b9ce3f999d720fa73037bbd06977ea34b76a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/96cb2a89b56c9efb0bac38e606dc0b0f13e650ec",
-                "reference": "96cb2a89b56c9efb0bac38e606dc0b0f13e650ec",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/eb0b9ce3f999d720fa73037bbd06977ea34b76a0",
+                "reference": "eb0b9ce3f999d720fa73037bbd06977ea34b76a0",
                 "shasum": ""
             },
             "require": {
@@ -1415,7 +1415,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/migrations/issues",
-                "source": "https://github.com/doctrine/migrations/tree/3.9.7"
+                "source": "https://github.com/doctrine/migrations/tree/3.9.8"
             },
             "funding": [
                 {
@@ -1431,20 +1431,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-23T19:33:20+00:00"
+            "time": "2026-10-04T12:35:58+00:00"
         },
         {
             "name": "doctrine/orm",
-            "version": "3.7.2",
+            "version": "3.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "6b47a02cd1d7119ef4d8f90ca6d49651accef1a3"
+                "reference": "00c2fd70da291cca1ec75f4dae5344fe3df588fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/6b47a02cd1d7119ef4d8f90ca6d49651accef1a3",
-                "reference": "6b47a02cd1d7119ef4d8f90ca6d49651accef1a3",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/00c2fd70da291cca1ec75f4dae5344fe3df588fa",
+                "reference": "00c2fd70da291cca1ec75f4dae5344fe3df588fa",
                 "shasum": ""
             },
             "require": {
@@ -1519,9 +1519,9 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/orm/issues",
-                "source": "https://github.com/doctrine/orm/tree/3.7.2"
+                "source": "https://github.com/doctrine/orm/tree/3.7.5"
             },
-            "time": "2026-09-23T05:28:00+00:00"
+            "time": "2026-10-09T05:58:13+00:00"
         },
         {
             "name": "doctrine/persistence",
@@ -3969,12 +3969,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "cfbd833987a5087c0ef4364283bfd87fbe1e5427"
+                "reference": "f7da92fe0e9236c1581a25d547617cf45635836e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/cfbd833987a5087c0ef4364283bfd87fbe1e5427",
-                "reference": "cfbd833987a5087c0ef4364283bfd87fbe1e5427",
+                "url": "https://api.github.com/repos/phpList/core/zipball/f7da92fe0e9236c1581a25d547617cf45635836e",
+                "reference": "f7da92fe0e9236c1581a25d547617cf45635836e",
                 "shasum": ""
             },
             "require": {
@@ -4121,7 +4121,7 @@
                 "source": "https://github.com/phpList/core",
                 "wiki": "https://github.com/phpList/core/wiki"
             },
-            "time": "2026-09-22T10:43:18+00:00"
+            "time": "2026-10-12T07:21:21+00:00"
         },
         {
             "name": "phplist/phplist-lan-texts",
@@ -4169,12 +4169,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "020eb1b53b0a21e8e289a3973bd82be0a7638bc1"
+                "reference": "4ef5dc029d2e45cfd0d16900373e9ecb2aff4129"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/020eb1b53b0a21e8e289a3973bd82be0a7638bc1",
-                "reference": "020eb1b53b0a21e8e289a3973bd82be0a7638bc1",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/4ef5dc029d2e45cfd0d16900373e9ecb2aff4129",
+                "reference": "4ef5dc029d2e45cfd0d16900373e9ecb2aff4129",
                 "shasum": ""
             },
             "require": {
@@ -4208,27 +4208,32 @@
                         "rest-api-identity": {
                             "type": "attribute",
                             "prefix": "/api/v2",
-                            "resource": "@PhpListRestBundle/Identity/Controller/"
+                            "resource": "@PhpListRestBundle/Identity/Controller/",
+                            "name_prefix": "api_"
                         },
                         "rest-api-analitics": {
                             "type": "attribute",
                             "prefix": "/api/v2",
-                            "resource": "@PhpListRestBundle/Statistics/Controller/"
+                            "resource": "@PhpListRestBundle/Statistics/Controller/",
+                            "name_prefix": "api_"
                         },
                         "rest-api-messaging": {
                             "type": "attribute",
                             "prefix": "/api/v2",
-                            "resource": "@PhpListRestBundle/Messaging/Controller/"
+                            "resource": "@PhpListRestBundle/Messaging/Controller/",
+                            "name_prefix": "api_"
                         },
                         "rest-api-subscription": {
                             "type": "attribute",
                             "prefix": "/api/v2",
-                            "resource": "@PhpListRestBundle/Subscription/Controller/"
+                            "resource": "@PhpListRestBundle/Subscription/Controller/",
+                            "name_prefix": "api_"
                         },
                         "rest-api-configuration": {
                             "type": "attribute",
                             "prefix": "/api/v2",
-                            "resource": "@PhpListRestBundle/Configuration/Controller/"
+                            "resource": "@PhpListRestBundle/Configuration/Controller/",
+                            "name_prefix": "api_"
                         }
                     },
                     "bundles": [
@@ -4282,7 +4287,7 @@
                 "issues": "https://github.com/phpList/rest-api/issues",
                 "source": "https://github.com/phpList/rest-api"
             },
-            "time": "2026-10-01T07:52:01+00:00"
+            "time": "2026-10-12T07:34:35+00:00"
         },
         {
             "name": "phplist/web-frontend",
@@ -4290,12 +4295,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/web-frontend.git",
-                "reference": "d89804a7eeceaeae2db6df2e739e5db9f40c8903"
+                "reference": "ee5052b5bb228097e16ea2186c5139645bf597a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/d89804a7eeceaeae2db6df2e739e5db9f40c8903",
-                "reference": "d89804a7eeceaeae2db6df2e739e5db9f40c8903",
+                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/ee5052b5bb228097e16ea2186c5139645bf597a0",
+                "reference": "ee5052b5bb228097e16ea2186c5139645bf597a0",
                 "shasum": ""
             },
             "require": {
@@ -4393,7 +4398,7 @@
                 "issues": "https://github.com/phpList/web-frontend/issues",
                 "source": "https://github.com/phpList/web-frontend"
             },
-            "time": "2026-10-01T09:40:07+00:00"
+            "time": "2026-10-12T07:37:13+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -4763,16 +4768,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.37",
+            "version": "9.6.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "aceaa623912caf8e80bffea22fc4103a0a01565f"
+                "reference": "8b5f757e8e92071bfdbfa93943f94f84c4e31007"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/aceaa623912caf8e80bffea22fc4103a0a01565f",
-                "reference": "aceaa623912caf8e80bffea22fc4103a0a01565f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8b5f757e8e92071bfdbfa93943f94f84c4e31007",
+                "reference": "8b5f757e8e92071bfdbfa93943f94f84c4e31007",
                 "shasum": ""
             },
             "require": {
@@ -4846,7 +4851,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.37"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.38"
             },
             "funding": [
                 {
@@ -4854,7 +4859,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-09-23T09:59:59+00:00"
+            "time": "2026-10-05T05:44:26+00:00"
         },
         {
             "name": "psr/cache",
@@ -12587,12 +12592,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TatevikGr/phplist-api-client.git",
-                "reference": "47e3d46beb5e090b0ab3abbadd2ecf814b9c4189"
+                "reference": "a7598e8621ffdc6426d96f6067122f7ff374a62a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TatevikGr/phplist-api-client/zipball/47e3d46beb5e090b0ab3abbadd2ecf814b9c4189",
-                "reference": "47e3d46beb5e090b0ab3abbadd2ecf814b9c4189",
+                "url": "https://api.github.com/repos/TatevikGr/phplist-api-client/zipball/a7598e8621ffdc6426d96f6067122f7ff374a62a",
+                "reference": "a7598e8621ffdc6426d96f6067122f7ff374a62a",
                 "shasum": ""
             },
             "require": {
@@ -12628,7 +12633,7 @@
                 "source": "https://github.com/TatevikGr/phplist-api-client/tree/dev",
                 "issues": "https://github.com/TatevikGr/phplist-api-client/issues"
             },
-            "time": "2026-10-01T09:26:36+00:00"
+            "time": "2026-10-09T13:45:25+00:00"
         },
         {
             "name": "tatevikgr/rss-feed",
@@ -13746,12 +13751,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "69ddaead6caa68f4f6190e2ee732f103326e78ba"
+                "reference": "96cf8b77ade13bb6638d1b26d48a72deec75b7d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/69ddaead6caa68f4f6190e2ee732f103326e78ba",
-                "reference": "69ddaead6caa68f4f6190e2ee732f103326e78ba",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/96cf8b77ade13bb6638d1b26d48a72deec75b7d0",
+                "reference": "96cf8b77ade13bb6638d1b26d48a72deec75b7d0",
                 "shasum": ""
             },
             "conflict": {
@@ -13865,7 +13870,6 @@
                 "cardgate/magento2": "<2.0.33",
                 "cardgate/woocommerce": "<=3.1.15",
                 "cart2quote/module-quotation": ">=4.1.6,<4.4.6|>=5,<5.4.4",
-                "cart2quote/module-quotation-encoded": ">=4.1.6,<=4.4.5|>=5,<5.4.4",
                 "cartalyst/sentry": "<2.1.7",
                 "catfan/medoo": "<1.7.5",
                 "causal/oidc": "<4",
@@ -14007,7 +14011,7 @@
                 "encore/laravel-admin": "<=1.8.19",
                 "endroid/qr-code-bundle": "<3.4.2",
                 "enhavo/enhavo-app": "<=0.13.1",
-                "enshrined/svg-sanitize": "<0.22",
+                "enshrined/svg-sanitize": "<=0.22",
                 "erusev/parsedown": "<1.7.2",
                 "ether/logs": "<3.0.4",
                 "evolutioncms/evolution": "<=3.2.3",
@@ -14040,7 +14044,7 @@
                 "feehi/feehicms": "<=2.1.1",
                 "fenom/fenom": "<=2.12.1",
                 "filament/actions": ">=3.2,<3.2.123|>=4,<=4.11.3|>=5,<=5.6.3",
-                "filament/filament": ">=3,<=3.3.51|>=4,<4.12.6|>=5,<5.7.6",
+                "filament/filament": ">=3,<=3.3.51|>=4,<4.13.2|>=5,<5.8.2",
                 "filament/forms": ">=3,<=3.3.52",
                 "filament/infolists": ">=3,<3.2.115|>=4,<=4.11.4|>=5,<=5.6.4",
                 "filament/tables": ">=3,<=3.3.50|>=4,<=4.11.4|>=5,<=5.6.4",
@@ -14209,6 +14213,8 @@
                 "krayin/laravel-crm": "<=2.2",
                 "kreait/firebase-php": ">=3.2,<3.8.1",
                 "kumbiaphp/kumbiapp": "<=1.1.1",
+                "kunstmaan/bundles-cms": "<7.3.2",
+                "kunstmaan/media-bundle": "<7.3.2",
                 "la-haute-societe/tcpdf": "<6.2.22",
                 "laktak/hjson": "<2.3",
                 "laminas/laminas-diactoros": "<2.18.1|==2.19|==2.20|==2.21|==2.22|==2.23|>=2.24,<2.24.2|>=2.25,<2.25.2",
@@ -14304,7 +14310,7 @@
                 "mobiledetect/mobiledetectlib": "<2.8.32",
                 "modx/revolution": "<=3.1",
                 "mojo42/jirafeau": "<4.4",
-                "mongodb/mongodb": "<1.21.4|>=2,<2.4.1",
+                "mongodb/mongodb": "<1.21.5|>=2,<2.4.2",
                 "mongodb/mongodb-extension": "<1.21.2",
                 "monolog/monolog": ">=1.8,<1.12",
                 "moodle/moodle": "<4.5.9|>=5.0.0.0-beta,<5.0.5|>=5.1.0.0-beta,<5.1.2",
@@ -14729,6 +14735,7 @@
                 "typo3fluid/fluid": ">=2,<2.0.8|>=2.1,<2.1.7|>=2.2,<2.2.4|>=2.3,<2.3.7|>=2.4,<2.4.4|>=2.5,<2.5.11|>=2.6,<2.6.10",
                 "ua-parser/uap-php": "<3.8",
                 "uasoft-indonesia/badaso": "<=2.9.7",
+                "ueberdosis/tiptap-php": "<2.1.1",
                 "unisharp/laravel-filemanager": "<2.9.1",
                 "universal-omega/dynamic-page-list3": "<3.6.4",
                 "unopim/unopim": "<=0.3",
@@ -14887,7 +14894,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-30T15:40:52+00:00"
+            "time": "2026-10-08T22:58:27+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
