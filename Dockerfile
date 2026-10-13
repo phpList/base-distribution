@@ -44,6 +44,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 # Ensure config directory exists for Composer scripts that write into it
 COPY config ./config
 
+COPY scripts ./scripts
+
 # Install PHP dependencies (include scripts so phpList creates config structure)
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
