@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
-// Start output buffering so that headers_sent() returns false during tests.
-// This prevents Symfony's NativeSessionStorage from throwing "headers already sent"
-// errors caused by PHPUnit's Printer writing to STDOUT before session start.
+use Symfony\Component\Dotenv\Dotenv;
+
 ob_start();
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+if (method_exists(Dotenv::class, 'bootEnv')) {
+    (new Dotenv())->bootEnv(dirname(__DIR__) . '/.env');
+}
