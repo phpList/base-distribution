@@ -3969,12 +3969,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "c9e6def85d522fb90479adb95aebcabb2b8b612e"
+                "reference": "2bf97e75509874e373c0c11f2d0ea4b277308545"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/c9e6def85d522fb90479adb95aebcabb2b8b612e",
-                "reference": "c9e6def85d522fb90479adb95aebcabb2b8b612e",
+                "url": "https://api.github.com/repos/phpList/core/zipball/2bf97e75509874e373c0c11f2d0ea4b277308545",
+                "reference": "2bf97e75509874e373c0c11f2d0ea4b277308545",
                 "shasum": ""
             },
             "require": {
@@ -4121,7 +4121,7 @@
                 "source": "https://github.com/phpList/core",
                 "wiki": "https://github.com/phpList/core/wiki"
             },
-            "time": "2026-10-14T15:20:09+00:00"
+            "time": "2026-10-20T15:13:27+00:00"
         },
         {
             "name": "phplist/phplist-lan-texts",
@@ -4169,12 +4169,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/rest-api.git",
-                "reference": "6ea891702169ac7e4ae89b3ea5749f5b61679722"
+                "reference": "5d02bf1e64270156929798c6d71817a287258ba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/rest-api/zipball/6ea891702169ac7e4ae89b3ea5749f5b61679722",
-                "reference": "6ea891702169ac7e4ae89b3ea5749f5b61679722",
+                "url": "https://api.github.com/repos/phpList/rest-api/zipball/5d02bf1e64270156929798c6d71817a287258ba0",
+                "reference": "5d02bf1e64270156929798c6d71817a287258ba0",
                 "shasum": ""
             },
             "require": {
@@ -4287,7 +4287,7 @@
                 "issues": "https://github.com/phpList/rest-api/issues",
                 "source": "https://github.com/phpList/rest-api"
             },
-            "time": "2026-10-16T16:03:30+00:00"
+            "time": "2026-10-20T15:03:39+00:00"
         },
         {
             "name": "phplist/web-frontend",
@@ -4295,12 +4295,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/web-frontend.git",
-                "reference": "4a0d81080fff38713c5fded90e8f3b60402b8667"
+                "reference": "74c03a4a7f8c4880b05fc88367dd9ec8956bcb04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/4a0d81080fff38713c5fded90e8f3b60402b8667",
-                "reference": "4a0d81080fff38713c5fded90e8f3b60402b8667",
+                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/74c03a4a7f8c4880b05fc88367dd9ec8956bcb04",
+                "reference": "74c03a4a7f8c4880b05fc88367dd9ec8956bcb04",
                 "shasum": ""
             },
             "require": {
@@ -4398,7 +4398,7 @@
                 "issues": "https://github.com/phpList/web-frontend/issues",
                 "source": "https://github.com/phpList/web-frontend"
             },
-            "time": "2026-10-16T16:06:06+00:00"
+            "time": "2026-10-20T15:23:03+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
