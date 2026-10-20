@@ -16,3 +16,5 @@
 .DS_Store
 .vagrant
 .phpunit.result.cache
+.env
+.env.dist
