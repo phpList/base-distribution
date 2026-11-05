@@ -4053,12 +4053,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "c209891eefe0f83d856af4b5e499e819fa90f491"
+                "reference": "9fc83f23cc12979169bf6319debfe22737c0b23f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/c209891eefe0f83d856af4b5e499e819fa90f491",
-                "reference": "c209891eefe0f83d856af4b5e499e819fa90f491",
+                "url": "https://api.github.com/repos/phpList/core/zipball/9fc83f23cc12979169bf6319debfe22737c0b23f",
+                "reference": "9fc83f23cc12979169bf6319debfe22737c0b23f",
                 "shasum": ""
             },
             "require": {
@@ -4205,7 +4205,7 @@
                 "source": "https://github.com/phpList/core",
                 "wiki": "https://github.com/phpList/core/wiki"
             },
-            "time": "2026-11-05T16:48:45+00:00"
+            "time": "2026-11-05T18:03:03+00:00"
         },
         {
             "name": "phplist/phplist-lan-texts",
@@ -4379,12 +4379,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/web-frontend.git",
-                "reference": "27b3b36f65762952eddba6d1c7f296e037d3ff1b"
+                "reference": "1032f5c90f4451a40553239e21ed9a9198b43204"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/27b3b36f65762952eddba6d1c7f296e037d3ff1b",
-                "reference": "27b3b36f65762952eddba6d1c7f296e037d3ff1b",
+                "url": "https://api.github.com/repos/phpList/web-frontend/zipball/1032f5c90f4451a40553239e21ed9a9198b43204",
+                "reference": "1032f5c90f4451a40553239e21ed9a9198b43204",
                 "shasum": ""
             },
             "require": {
@@ -4482,7 +4482,7 @@
                 "issues": "https://github.com/phpList/web-frontend/issues",
                 "source": "https://github.com/phpList/web-frontend"
             },
-            "time": "2026-11-05T16:54:51+00:00"
+            "time": "2026-11-05T18:17:26+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
