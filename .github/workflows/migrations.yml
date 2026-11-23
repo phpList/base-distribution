@@ -19,7 +19,7 @@ jobs:
       DB_PASSWORD: phplist
     services:
       mysql:
-        image: mysql:5.7
+        image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: ${{ env.DB_PASSWORD }}
           # created empty by the service; only this job uses it
