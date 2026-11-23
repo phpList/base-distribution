@@ -70,5 +70,9 @@ jobs:
             echo "::error::The migrations created only $tables of the $expected tables in the init dump."
             exit 1
           fi
+      - name: Create the Messenger transport tables
+        # messenger_messages is created by Messenger's auto_setup on first use, not by a migration, but it is
+        # part of the schema that doctrine:schema:validate expects.
+        run: php bin/console messenger:setup-transports --env=dev
       - name: Validate the schema against the Doctrine mapping
         run: php bin/console doctrine:schema:validate --env=dev
