@@ -55,7 +55,11 @@ class ApiClientContractTest extends TestCase
         foreach ($imports as $import => $usedIn) {
             self::assertTrue(
                 class_exists($import) || interface_exists($import) || enum_exists($import),
-                sprintf('%s (used in web-frontend %s) does not exist in the installed rest-api-client.', $import, $usedIn)
+                sprintf(
+                    '%s (used in web-frontend %s) does not exist in the installed rest-api-client.',
+                    $import,
+                    $usedIn
+                )
             );
         }
     }
@@ -78,7 +82,12 @@ class ApiClientContractTest extends TestCase
                 foreach (array_unique($calls[1]) as $method) {
                     self::assertTrue(
                         method_exists($type, $method),
-                        sprintf('%s calls %s::%s(), which does not exist in the installed rest-api-client.', $className, $type, $method)
+                        sprintf(
+                            '%s calls %s::%s(), which does not exist in the installed rest-api-client.',
+                            $className,
+                            $type,
+                            $method
+                        )
                     );
                     ++$checked;
                 }

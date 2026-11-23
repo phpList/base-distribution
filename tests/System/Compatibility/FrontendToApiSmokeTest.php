@@ -133,7 +133,11 @@ class FrontendToApiSmokeTest extends WebTestCase
     public function testLoginIsThrottledWithATooManyAttemptsPageAfterRepeatedFailures(): void
     {
         for ($attempt = 0; $attempt < 5; ++$attempt) {
-            $this->apiMock->append(new Response(401, ['Content-Type' => 'application/json'], '{"message":"Not authorized"}'));
+            $this->apiMock->append(new Response(
+                401,
+                ['Content-Type' => 'application/json'],
+                '{"message":"Not authorized"}'
+            ));
             $this->browser->request('POST', '/login', ['username' => 'admin', 'password' => 'wrong']);
         }
 

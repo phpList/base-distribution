@@ -46,7 +46,10 @@ class ApplicationWiringTest extends KernelTestCase
                 continue;
             }
             $parts = explode('::', $controller);
-            self::assertTrue(class_exists($parts[0]), sprintf('Controller class of route "%s" is missing: %s', $name, $controller));
+            self::assertTrue(
+                class_exists($parts[0]),
+                sprintf('Controller class of route "%s" is missing: %s', $name, $controller)
+            );
             self::assertTrue(
                 method_exists($parts[0], $parts[1] ?? '__invoke'),
                 sprintf('Controller method of route "%s" is missing: %s', $name, $controller)

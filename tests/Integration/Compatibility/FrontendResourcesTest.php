@@ -40,7 +40,10 @@ class FrontendResourcesTest extends KernelTestCase
     public function testEveryFileListedInTheAssetManifestExists(): void
     {
         foreach ($this->manifest() as $name => $publicPath) {
-            self::assertFileExists(self::projectDir() . '/public' . $publicPath, sprintf('Asset "%s" is missing.', $name));
+            self::assertFileExists(
+                self::projectDir() . '/public' . $publicPath,
+                sprintf('Asset "%s" is missing.', $name)
+            );
         }
     }
 
@@ -67,7 +70,11 @@ class FrontendResourcesTest extends KernelTestCase
 
         self::assertNotEmpty($used);
         foreach ($used as $asset => $template) {
-            self::assertArrayHasKey($asset, $manifest, sprintf('%s uses asset "%s", which is not in the manifest.', $template, $asset));
+            self::assertArrayHasKey(
+                $asset,
+                $manifest,
+                sprintf('%s uses asset "%s", which is not in the manifest.', $template, $asset)
+            );
         }
     }
 

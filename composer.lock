@@ -4053,12 +4053,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpList/core.git",
-                "reference": "b449ec456cda84ba3bee7fff94567bcf97e0cdb1"
+                "reference": "3a727229d9e41d06afdeb092de964a38e4cc4268"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpList/core/zipball/b449ec456cda84ba3bee7fff94567bcf97e0cdb1",
-                "reference": "b449ec456cda84ba3bee7fff94567bcf97e0cdb1",
+                "url": "https://api.github.com/repos/phpList/core/zipball/3a727229d9e41d06afdeb092de964a38e4cc4268",
+                "reference": "3a727229d9e41d06afdeb092de964a38e4cc4268",
                 "shasum": ""
             },
             "require": {
@@ -4205,7 +4205,7 @@
                 "source": "https://github.com/phpList/core",
                 "wiki": "https://github.com/phpList/core/wiki"
             },
-            "time": "2026-11-19T08:48:22+00:00"
+            "time": "2026-11-23T07:02:08+00:00"
         },
         {
             "name": "phplist/phplist-lan-texts",
