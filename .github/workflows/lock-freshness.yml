@@ -1,0 +1,28 @@
+name: Check locked phpList packages are up to date
+on:
+  schedule:
+    - cron: '0 6 * * 1-5'
+  workflow_dispatch:
+jobs:
+  freshness:
+    name: composer.lock vs. branch heads of the phpList packages
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer
+      - name: Fail if a locked phplist/* or tatevikgr/* package is behind its branch
+        run: |
+          # The packages are required as dev-* branches, so a stale composer.lock silently deploys old code
+          # (e.g. web-frontend calling a rest-api-client method the locked client does not have yet).
+          outdated=$(composer outdated --locked --direct --format=json \
+            | jq -c '[.locked[] | select(.name | test("^(phplist|tatevikgr)/")) | {name, version, latest}]')
+          echo "$outdated"
+          if [ "$outdated" != "[]" ]; then
+            echo "::error::composer.lock is behind the branch head. Run composer update for the packages listed above."
+            exit 1
+          fi

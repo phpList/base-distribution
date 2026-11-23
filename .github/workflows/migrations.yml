@@ -1,0 +1,75 @@
+name: Database migrations
+# Checks that the migrations shipped by phplist/core (and the other bundles) build, on an empty database, a schema
+# that matches the Doctrine mapping. Separate from ci.yml because it tests core's migrations, not this repository's
+# code: it gets its own status, and the schedule catches changes that arrive through dev-* dependencies.
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '30 6 * * 1-5'
+  workflow_dispatch:
+jobs:
+  migrations:
+    name: Migrations build a schema matching the Doctrine mapping
+    runs-on: ubuntu-22.04
+    env:
+      DB_DATABASE: phplist_migrations
+      DB_USERNAME: root
+      DB_PASSWORD: phplist
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ env.DB_PASSWORD }}
+          # created empty by the service; only this job uses it
+          MYSQL_DATABASE: ${{ env.DB_DATABASE }}
+        ports:
+          - 3306/tcp
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, dom, fileinfo, mysql
+          coverage: none
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+      - name: Cache composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Install the locked dependencies from composer.lock
+        run: composer install --prefer-dist --no-progress
+      - name: Point the application at the migrations database
+        # The dev environment reads the database name from PHPLIST_DATABASE_NAME (the test environment hardcodes
+        # "phplist", so it is not used here).
+        run: |
+          {
+            echo "PHPLIST_DATABASE_NAME=${{ env.DB_DATABASE }}"
+            echo "PHPLIST_DATABASE_USER=${{ env.DB_USERNAME }}"
+            echo "PHPLIST_DATABASE_PASSWORD=${{ env.DB_PASSWORD }}"
+            echo "PHPLIST_DATABASE_HOST=127.0.0.1"
+            echo "PHPLIST_DATABASE_PORT=${{ job.services.mysql.ports['3306'] }}"
+          } >> "$GITHUB_ENV"
+      - name: Run the migrations
+        run: php bin/console doctrine:migrations:migrate --no-interaction --env=dev
+      - name: Check the init migration created every table of its dump
+        # The init migration reports success even when part of its SQL dump fails (see the TODO in phplist/core's
+        # Version20251028092901MySqlInit), so count the tables instead of trusting its exit code.
+        run: |
+          tables=$(mysql --host 127.0.0.1 --port "$PHPLIST_DATABASE_PORT" -u"$PHPLIST_DATABASE_USER" -p"$PHPLIST_DATABASE_PASSWORD" -N \
+            -e "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '$PHPLIST_DATABASE_NAME' AND table_name LIKE 'phplist\_%'")
+          expected=$(grep -c '^CREATE TABLE' vendor/phplist/core/src/Migrations/initial_schema.sql)
+          echo "phpList tables created by the migrations: $tables (the init dump alone creates $expected)"
+          if [ "$tables" -lt "$expected" ]; then
+            echo "::error::The migrations created only $tables of the $expected tables in the init dump."
+            exit 1
+          fi
+      - name: Validate the schema against the Doctrine mapping
+        run: php bin/console doctrine:schema:validate --env=dev

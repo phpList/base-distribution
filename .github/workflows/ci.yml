@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         php-versions: ['8.2']
-        dependencies: ['current', 'oldest']
+        dependencies: ['locked', 'latest']
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -50,10 +50,10 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
       - name: Install the latest dependencies
         run: composer update --with-dependencies --prefer-stable --prefer-dist
-        if: ${{ matrix.dependencies }} == "current"
-      - name: Install current dependencies from composer.lock
+        if: matrix.dependencies == 'latest'
+      - name: Install the locked dependencies from composer.lock
         run: composer install
-        if: ${{ matrix.dependencies }} == "oldest"
+        if: matrix.dependencies == 'locked'
       - name: Set up database schema
         run: mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -u${{ env.DB_USERNAME }} -p${{ env.DB_PASSWORD }} ${{ env.DB_DATABASE }} < vendor/phplist/core/resources/Database/Schema.sql
       - name: Validating composer.json
