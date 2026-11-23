@@ -61,8 +61,6 @@ jobs:
       - name: Run the migrations
         run: php bin/console doctrine:migrations:migrate --no-interaction --env=dev
       - name: Check the init migration created every table of its dump
-        # The init migration reports success even when part of its SQL dump fails (see the TODO in phplist/core's
-        # Version20251028092901MySqlInit), so count the tables instead of trusting its exit code.
         run: |
           tables=$(mysql --host 127.0.0.1 --port "$PHPLIST_DATABASE_PORT" -u"$PHPLIST_DATABASE_USER" -p"$PHPLIST_DATABASE_PASSWORD" -N \
             -e "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '$PHPLIST_DATABASE_NAME' AND table_name LIKE 'phplist\_%'")
