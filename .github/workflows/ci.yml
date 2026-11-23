@@ -1,5 +1,5 @@
 name: phpList Base Dist Build
-on: [push, pull_request]
+on: [push, pull_request, workflow_call]
 jobs:
   main:
     name: phpList Base Dist on PHP ${{ matrix.php-versions }}, with dist ${{ matrix.dependencies }} [Build, Test]

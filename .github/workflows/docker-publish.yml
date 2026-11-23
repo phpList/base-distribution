@@ -14,7 +14,15 @@ env:
   DOCKERHUB_IMAGE: tatevikg1/phplist4
 
 jobs:
+  # The image is published only if the other workflows succeed for this commit.
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  migrations:
+    uses: ./.github/workflows/migrations.yml
+
   docker:
+    needs: [ci, migrations]
     runs-on: ubuntu-22.04
     permissions:
       contents: read

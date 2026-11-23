@@ -8,6 +8,7 @@ on:
   schedule:
     - cron: '30 6 * * 1-5'
   workflow_dispatch:
+  workflow_call:
 jobs:
   migrations:
     name: Migrations build a schema matching the Doctrine mapping
