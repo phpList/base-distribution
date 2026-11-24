@@ -77,8 +77,9 @@ services:
       POSTGRES_DB: phplistdb
       POSTGRES_USER: phplist
       POSTGRES_PASSWORD: phplist
+    # Default credentials: publish on loopback only (the app reaches it at postgres:5432 on appnet).
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
     healthcheck:
@@ -95,9 +96,10 @@ services:
       - discovery.type=single-node
       - xpack.security.enabled=false
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    # Security is disabled, so do not publish this beyond the host. The app reaches it at elasticsearch:9200 on
+    # appnet; the loopback mapping is only for development access (9300 is the node transport, not needed).
     ports:
-      - "9200:9200"
-      - "9300:9300"
+      - "127.0.0.1:9200:9200"
     volumes:
       - es_data:/usr/share/elasticsearch/data
     healthcheck:
