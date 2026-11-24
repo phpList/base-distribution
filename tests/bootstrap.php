@@ -2,9 +2,17 @@
 
 declare(strict_types=1);
 
-// Start output buffering so that headers_sent() returns false during tests.
-// This prevents Symfony's NativeSessionStorage from throwing "headers already sent"
-// errors caused by PHPUnit's Printer writing to STDOUT before session start.
+use Symfony\Component\Dotenv\Dotenv;
+
 ob_start();
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+// symfony/dotenv is provided by phplist/core. Fail loudly instead of running the tests without the .env values.
+if (!class_exists(Dotenv::class) || !method_exists(Dotenv::class, 'bootEnv')) {
+    throw new RuntimeException(
+        'symfony/dotenv (>= 4.2) is required to load .env for the tests. Run "composer install".'
+    );
+}
+
+(new Dotenv())->bootEnv(dirname(__DIR__) . '/.env');
