@@ -14,8 +14,9 @@ services:
       PHPLIST_DATABASE_USER: ${PHPLIST_DATABASE_USER:-phplist}
       PHPLIST_DATABASE_PASSWORD: ${PHPLIST_DATABASE_PASSWORD:-phplist}
       PHPLIST_DATABASE_DRIVER: ${PHPLIST_DATABASE_DRIVER:-pdo_mysql} # pdo_pgsql
-      PHPLIST_DATABASE_HOST: db # postgres
-      PHPLIST_DATABASE_PORT: 3306 # 5432
+      # For PostgreSQL set PHPLIST_DATABASE_DRIVER=pdo_pgsql, DOCKER_DB_HOST=postgres, DOCKER_DB_PORT=5432
+      PHPLIST_DATABASE_HOST: ${DOCKER_DB_HOST:-db}
+      PHPLIST_DATABASE_PORT: ${DOCKER_DB_PORT:-3306}
       # The image ships without a secret; generate one with: openssl rand -hex 20
       PHPLIST_SECRET: ${PHPLIST_SECRET:?Set PHPLIST_SECRET (e.g. openssl rand -hex 20) in the shell or a .env next to docker-compose.yml}
       FRONT_END_BASE_URL: 'http://app:8081/'
