@@ -194,6 +194,7 @@ The project includes a Docker setup to run phpList with Apache and MySQL.
 
 Quick start (development/test):
 
+- Set a secret (the image ships without one): `export PHPLIST_SECRET=$(openssl rand -hex 20)`
 - Build and start the stack: `docker compose up --build`
 - Open [http://localhost:8081](http://localhost:8081)
 
@@ -209,7 +210,8 @@ Notes:
 
 - For production deployments, build and push the image, then run it behind a reverse proxy or load balancer. Example:
   - `docker build -t your-registry/phplist-base:latest .`
-  - `docker run -p 8080:80 --env PHPLIST_DATABASE_HOST=... --env PHPLIST_DATABASE_NAME=... --env PHPLIST_DATABASE_USER=... --env PHPLIST_DATABASE_PASSWORD=... your-registry/phplist-base:latest`
+  - `docker run -p 8080:80 --env PHPLIST_DATABASE_HOST=... --env PHPLIST_DATABASE_NAME=... --env PHPLIST_DATABASE_USER=... --env PHPLIST_DATABASE_PASSWORD=... --env PHPLIST_SECRET=... your-registry/phplist-base:latest`
+- The image contains no `PHPLIST_SECRET`. Generate one once (`openssl rand -hex 20`) and pass the same value on every run, or mount an edited `.env`; changing it invalidates the security tokens signed with the old one.
 - Persist the MySQL data using the db_data volume defined in docker-compose.yml, or bind mount your own volume.
 - You can also mount ./var to persist logs/cache between restarts. See commented volume in docker-compose.yml.
 - The container uses Apache with DocumentRoot set to /var/www/html/public and mod_rewrite enabled.

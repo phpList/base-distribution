@@ -46,8 +46,12 @@ COPY config ./config
 
 COPY scripts ./scripts
 
-# Install PHP dependencies (include scripts so phpList creates config structure)
-RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+# Install PHP dependencies (include scripts so phpList creates config structure).
+# The post-install hook writes .env with a freshly generated PHPLIST_SECRET; blank it in the same layer so no
+# secret is baked into (and shared by every user of) the published image.
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader \
+    && sed -i 's/^PHPLIST_SECRET=.*/PHPLIST_SECRET=/' .env \
+    && ! grep -q '^PHPLIST_SECRET=.' .env
 
 # Copy the rest of the application (except files ignored by .dockerignore)
 COPY . .

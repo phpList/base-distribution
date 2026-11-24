@@ -1,5 +1,8 @@
 services:
   app:
+    # `docker compose up --build` builds the local checkout and tags it with the image name below;
+    # `docker compose pull` fetches the published image instead.
+    build: .
     # todo: change to phplist dockerhub
     image: tatevikg1/phplist4:test
     container_name: base-distribution-app
@@ -13,6 +16,8 @@ services:
       PHPLIST_DATABASE_DRIVER: ${PHPLIST_DATABASE_DRIVER:-pdo_mysql} # pdo_pgsql
       PHPLIST_DATABASE_HOST: db # postgres
       PHPLIST_DATABASE_PORT: 3306 # 5432
+      # The image ships without a secret; generate one with: openssl rand -hex 20
+      PHPLIST_SECRET: ${PHPLIST_SECRET:?Set PHPLIST_SECRET (e.g. openssl rand -hex 20) in the shell or a .env next to docker-compose.yml}
       FRONT_END_BASE_URL: 'http://app:8081/'
       API_BASE_URL: 'http://app:8081/'
 
