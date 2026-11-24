@@ -25,6 +25,12 @@ class ApiClientContractTest extends TestCase
      */
     private static function frontendFiles(): array
     {
+        self::assertDirectoryExists(
+            self::frontendSourceDir(),
+            'phplist/web-frontend sources not found, so its compatibility with the installed rest-api-client '
+            . 'cannot be checked. Run "composer install".'
+        );
+
         $files = [];
         $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(self::frontendSourceDir()));
         foreach ($iterator as $file) {

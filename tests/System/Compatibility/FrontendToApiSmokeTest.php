@@ -50,6 +50,13 @@ class FrontendToApiSmokeTest extends WebTestCase
         $stack->push(Middleware::history($this->apiRequests));
 
         $client = self::getContainer()->get(Client::class);
+        // Client has no setter for its HTTP client (the constructor only merges Guzzle config), so it is replaced
+        // by reflection; fail with a clear message if the installed client no longer has that property
+        self::assertTrue(
+            property_exists(Client::class, 'httpClient'),
+            'rest-api-client changed: Client::$httpClient no longer exists, so this test cannot mock the API layer. '
+            . 'Update the injection in FrontendToApiSmokeTest::setUp().'
+        );
         $property = new \ReflectionProperty(Client::class, 'httpClient');
         $property->setAccessible(true);
         $property->setValue($client, new GuzzleClient([
