@@ -1,7 +1,8 @@
 name: Database migrations
 # Checks that the migrations shipped by phplist/core (and the other bundles) build, on an empty database, a schema
 # that matches the Doctrine mapping. Separate from ci.yml because it tests core's migrations, not this repository's
-# code: it gets its own status, and the schedule catches changes that arrive through dev-* dependencies.
+# code: it gets its own status. It always installs composer.lock, because that is what the published image ships;
+# lock-freshness.yml is what flags a lock that has fallen behind the dev-* branches.
 on:
   push:
   pull_request:
